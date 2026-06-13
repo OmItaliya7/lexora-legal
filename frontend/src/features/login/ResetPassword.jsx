@@ -49,7 +49,7 @@ const ResetPassword = () => {
   return (
     <>
     <SEO
-    title="Reset Password | Dotch Law Firm"
+    title="Reset Password | Lexora Legal"
     description="Reset your account password securely and regain access to your legal consultation account."
     path="/"
     noIndex={true}

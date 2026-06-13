@@ -82,7 +82,7 @@ const handleSubmit = async (e) => {
   return (
     <>
       <SEO
-        title="Create Account | Dotch Law Firm"
+        title="Create Account | Lexora Legal"
         description="Create your law firm account to request consultations, connect with experienced attorneys, and manage legal services online."
         path="/signup"
         noIndex={true}

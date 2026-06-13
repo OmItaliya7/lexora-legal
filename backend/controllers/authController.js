@@ -81,10 +81,16 @@ const loginUser = asyncHandler(async (req, res) => {
         throw new Error("This account already uses Google Sign-In. Please continue with Google.");
     }
 
-    if(user.lockUntil && user.lockUntil > Date.now()){
-        res.status(401);
-        throw new Error("Account locked. Try again after 15 minutes.");
-    }
+    if (user.lockUntil && user.lockUntil > Date.now()) {
+    const remainingMinutes = Math.ceil(
+        (user.lockUntil - Date.now()) / (60 * 1000)
+    );
+
+    res.status(401);
+    throw new Error(
+        `Account locked. Try again in ${remainingMinutes} minute(s).`
+    );
+}
 
     // Compare password
     const isMatch = await bcrypt.compare(password,user.password);
@@ -92,17 +98,15 @@ const loginUser = asyncHandler(async (req, res) => {
     if (!isMatch) {
         user.loginAttempts += 1;
             // Lock account after 5 failed attempts
-    if (user.loginAttempts >= 5) {
-        user.lockUntil = Date.now() + 15 * 60 * 1000;
-    }
-    await user.save();
-    if(user.loginAttempts >=5){
-        res.status(401);
-        throw new Error("Account locked. Too many failed login attempts.");
-    }
-
-    res.status(401);
-    throw new Error("Invalid Email or Password");
+        if (user.loginAttempts === 5) {
+            user.lockUntil = Date.now() +  10 * 60 * 1000; //10 min
+            await user.save();
+            res.status(401);
+            throw new Error("Account locked. Too many failed login attempts.");
+        }
+      await user.save();
+      res.status(401);
+      throw new Error("Invalid Email or Password");
     }
 
     // Reset login attempts after successful login

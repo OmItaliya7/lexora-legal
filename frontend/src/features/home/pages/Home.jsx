@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Dotch Law Firm | Trusted Legal Services & Attorneys"
+        title="Lexora Legal | Trusted Legal Services & Attorneys"
         description="Trusted attorneys providing business law, family law, criminal defense, legal consultation, and corporate legal services. Helping individuals and businesses achieve successful legal outcomes."
         keywords="law firm, attorney, lawyer, legal services, business law, family law, criminal defense, legal consultation"
         path="/"

@@ -41,7 +41,7 @@ const ForgotPassword = () => {
   return (
     <>
     <SEO
-    title="Forgot Password | Dotch Law Firm"
+    title="Forgot Password | Lexora Legal"
     description="Reset your account password securely and regain access to your legal consultation account."
     path="/forgot-password"
     noIndex={true}

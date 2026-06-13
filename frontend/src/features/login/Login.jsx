@@ -190,7 +190,7 @@ const handleSubmit = async (e) => {
   return (
     <>
     <SEO
-      title="Login | Law Firm"
+      title="Login | Lexora Legal"
       description="Securely login to access your legal consultation account and manage your services."
       path="/login"
       noIndex={true}
