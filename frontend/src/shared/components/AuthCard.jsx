@@ -1,8 +1,8 @@
 import { FiX } from "react-icons/fi";
 import {useState} from "react";
 import userIcon from "../../assets/icons/user-icon.svg";
-import showPasswordIcon from "../../assets/icons/passWordVisiblity/showPassword.svg";
-import hidePasswordIcon from "../../assets/icons/passWordVisiblity/hidePassword.svg";
+import showPasswordIcon from "../../assets/icons/PassWordVisiblity/showPassword.svg";
+import hidePasswordIcon from "../../assets/icons/PassWordVisiblity/hidePassword.svg";
 
 const SocialButton = ({ icon, text, alt, onClick }) => {
   return (
