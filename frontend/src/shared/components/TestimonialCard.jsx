@@ -59,7 +59,7 @@ const TestimonialCard = React.memo(({ item, cardRef }) => {
             </p>
 
             <div className="mt-auto pl-4 mb-8 border-l border-[#D8D6BF] font-medium text-[#D8D6BF]">
-                <h4 className="text-base mb-2">{item.name}</h4>
+                <p className="text-base mb-2">{item.name}</p>
                 <p className="text-xs">{item.role}</p>
                 <p className="text-xs">{item.role2}</p>
             </div>
