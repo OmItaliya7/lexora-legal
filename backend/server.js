@@ -14,6 +14,9 @@ const swaggerUi = require("swagger-ui-express");
 
 const app = express();
 
+// Required for Render / Railway / Heroku
+app.set("trust proxy", 1);
+
 app.use(helmet());
 
 const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [];
