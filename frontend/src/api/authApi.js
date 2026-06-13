@@ -1,0 +1,47 @@
+import axios from "axios";
+
+// const API_URL = "http://localhost:8080/auth";
+const API_URL = `${import.meta.env.VITE_API_URL}/auth`;
+
+export const registerUser = async (userData) => {
+    const response = await axios.post(`${API_URL}/register`, userData);
+    return response.data;
+};
+
+export const loginUser = async (userData) => {
+    const response = await axios.post(`${API_URL}/login`, userData);
+    return response.data;
+};
+
+export const googleLogin = async (access_token) => {
+    const response = await axios.post(`${API_URL}/google`, { access_token });
+    return response.data;   
+};
+
+export const getProfile = async (token) => {
+    const response = await axios.get(`${API_URL}/profile`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+    return response.data;
+};
+
+export const forgotPassword = async (email) => {
+    const response = await axios.post(`${API_URL}/forgot-password`, { email });
+    return response.data;
+};
+
+export const resetPassword = async (token, password) => {
+    const response = await axios.post(`${API_URL}/reset-password/${token}`, { password });
+    return response.data;
+};
+
+export const changePassword = async (passwordData,token) => {
+  const response = await axios.post(`${API_URL}/change-password`,passwordData,{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  return response.data;
+};
