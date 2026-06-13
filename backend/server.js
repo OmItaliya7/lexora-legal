@@ -15,15 +15,23 @@ const swaggerUi = require("swagger-ui-express");
 const app = express();
 
 app.use(helmet());
+
+const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [];
 app.use(
   cors({
-    origin: [
-      "https://lexora-legall.vercel.app"
-    ],
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST"],
     credentials: true,
   })
 );
-// app.use(cors());
 app.use(express.json({ limit: "10kb" }));
 
 app.use("/auth", authRoutes);
