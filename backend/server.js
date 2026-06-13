@@ -22,9 +22,9 @@ app.use(express.json({ limit: "10kb" }));
 app.use("/auth", authRoutes);
 app.use("/contact", contactRoutes);
 
-// app.get("/", (req, res) => {
-//   res.send("Lexora Legal Backend Running");
-// });
+app.get("/", (req, res) => {
+  res.send("Lexora Legal Backend Running");
+});
 
 app.use(errorHandler);
 
