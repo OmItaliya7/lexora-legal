@@ -184,7 +184,7 @@
 import formImage from "../../../assets/images/contact-form.webp";
 import userIcon from "../../../assets/icons/form/user.svg";
 import emailIcon from "../../../assets/icons/form/email.svg";
-import phoneIcon from "../../../assets/icons/form/Phone.svg";
+import phoneIcon from "../../../assets/icons/form/phone.svg";
 import serviceIcon from "../../../assets/icons/form/services.svg";
 import messageIcon from "../../../assets/icons/form/message.svg";
 

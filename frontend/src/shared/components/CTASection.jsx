@@ -110,7 +110,7 @@
 
 import userIcon from "../../assets/icons/form/cta-user.svg";
 import emailIcon from "../../assets/icons/form/email.svg";
-import phoneIcon from "../../assets/icons/form/Phone.svg";
+import phoneIcon from "../../assets/icons/form/phone.svg";
 import messageIcon from "../../assets/icons/form/cta-message.svg";
 import arrow from "../../assets/decorations/arrow-CTA.webp";
 import ArrowIcon from "../../shared/icons/ArrowIcon";

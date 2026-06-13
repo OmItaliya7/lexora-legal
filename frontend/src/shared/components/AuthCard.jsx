@@ -13,7 +13,7 @@
 //   )
 // }
 
-// const InputField = ({ label , type = "text", name, value, onChange}) =>{
+// const InputField = ({ label , type = "text", name, value, onChange, autoComplete}) =>{
 //   const [showPassword, setShowPassword] = useState(false);
 //   const isPasswordField = type === "password";
 //   return (
@@ -127,11 +127,14 @@
 // export default AuthCard;
 
 
+
+
+
 import { FiX } from "react-icons/fi";
 import {useState} from "react";
 import userIcon from "../../assets/icons/user-icon.svg";
-import showPasswordIcon from "../../assets/icons/PassWordVisiblity/ShowPassword.svg";
-import hidePasswordIcon from "../../assets/icons/PassWordVisiblity/HidePassword.svg";
+import showPasswordIcon from "../../assets/icons/passWordVisiblity/showPassword.svg";
+import hidePasswordIcon from "../../assets/icons/passWordVisiblity/hidePassword.svg";
 
 const SocialButton = ({ icon, text, alt, onClick }) => {
   return (
@@ -151,13 +154,14 @@ const InputField = ({ label , type = "text", name, value, onChange, autoComplete
         <label htmlFor={name} className="text-xs lg:text-base block pb-2 text-[#D8D6BF]">
           {label}
         </label>
+        <div className="relative">
          <input type={isPasswordField ? showPassword ? "text" : "password" : type} name={name} id={name} onChange={onChange} autoComplete={autoComplete} required aria-required="true" value={value} className="w-full bg-transparent border border-[#403F38] rounded-full px-4 sm:px-5 py-3 lg:py-4 text-white focus:border-white transition"/>
          {isPasswordField && (
           <button type="button" aria-label={showPassword ? "Hide password" : "Show password"} onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2  text-[#D8D6BF] text-xl">
             <img src={showPassword ? showPasswordIcon : hidePasswordIcon} alt="Eye icon" />
           </button>
          )}
-      
+      </div>
     </div>
   )
 }
