@@ -7,9 +7,9 @@
     box-sizing: border-box;
   }
 
-  html {
+  /* html {
     scroll-behavior: smooth;
-  }
+  } */
 
   body {
     background-color: #0E100F;

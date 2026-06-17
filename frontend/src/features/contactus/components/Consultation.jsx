@@ -118,10 +118,10 @@ const Consultation = () => {
   return (
     <section aria-labelledby="consultation-heading" className="max-w-[1440px] mx-auto px-5">
       <div className="max-w-[1200px] mx-auto py-17.5 md:py-22.5 lg:py-25 border-b border-[#FEFCE1]/25">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-21.25 items-center lg:items-start">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-21.25 items-center ">
 
           {/* LEFT IMAGE */}
-          <div className="w-full max-w-[340px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[430px] shrink-0 mx-auto lg:mx-0">
+          <div className="w-full max-w-[340px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[430px] shrink-0">
             <img
               src={formImage}
               loading="lazy"
@@ -132,7 +132,7 @@ const Consultation = () => {
           </div>
 
           {/* RIGHT FORM */}
-          <div className="w-full max-w-[680px]">
+          <div>
 
             {/* HEADER */}
             <div className="mb-14 lg:mb-24">
@@ -141,12 +141,12 @@ const Consultation = () => {
               </h2>
 
               <p className="font-medium text-sm sm:text-base text-[#D8D6BF]">
-                Speak directly with our experienced attorneys and receive professional guidance tailored to your legal matter.We are committed to providing trusted legal solutions and clear advice for individuals and businesses.
+                Save money by bundling Solar power, Battery Storage, and Roofing and make your home into an energy saving machine!
               </p>
             </div>
 
             {/* FORM */}
-            <form aria-label="Free legal consultation request form" onSubmit={handleSubmit} className="w-full max-w-[560px] space-y-8 lg:space-y-9">
+            <form aria-label="Free legal consultation request form" onSubmit={handleSubmit} className="w-full max-w-[470px] space-y-8 lg:space-y-9">
 
               {/* GRID INPUTS */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-9">
@@ -162,18 +162,32 @@ const Consultation = () => {
               <FormField icon={messageIcon} alt="message" placeholder="Write your message here..." name = "message" value = {formData.message} onChange = {handleChange} textarea />
 
               {/* BOTTOM */}
-              <div className="flex flex-col md:flex-row md:items-end gap-6 sm:gap-10 xl:gap-12.5">
+              <div className="flex flex-col md:flex-row">
 
                 {/* CHECKBOX */}
-                <label htmlFor="terms" className="inline-flex items-start gap-2 max-w-[280px] font-medium text-sm text-[#D8D6BF]">
-                  <input checked={agreed} onChange={(e) => setAgreed(e.target.checked)} id="terms" type="checkbox" className="accent-[#FC8608] bg-[#FEFCE1] mt-[3px]" />
+                <label htmlFor="terms" className="inline-flex items-start gap-[5px] text-sm text-[#D8D6BF] font-medium">
+                  <div className="relative mt-[2px]">
+                    <input
+                      id="terms"
+                      type="checkbox"
+                      checked={agreed}
+                      onChange={(e) => setAgreed(e.target.checked)}
+                      className="peer size-4 appearance-none rounded-sm border-[1.5px] border-[#FEFCE1] checked:bg-[#FC8608] checked:border-[#FC8608]"/>
+
+                    {agreed && (
+                      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-0 top-0">
+                        <path d="M4.16699 12.0833C4.16699 12.0833 5.41699 12.0833 7.08366 14.9999C7.08366 14.9999 11.716 7.36103 15.8337 5.83325" stroke="#0E100F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                  </div>
+
                   <span>
                     I hereby agree to the Terms & Conditions of our law firm.
                   </span>
                 </label>
 
                 {/* BUTTON */}
-                <button disabled={loading} type="submit" className="bg-[#FC8608] px-10 py-4 rounded-full flex items-center justify-center gap-4 text-[#0E100F] font-semibold hover:opacity-90 transition whitespace-nowrap">
+                <button disabled={loading} type="submit" className="bg-[#FC8608] px-10 py-4 rounded-full flex items-center justify-center gap-4 text-[#0E100F] font-semibold text-sm hover:opacity-90 transition whitespace-nowrap">
                   {loading ? "Sending..." : "Send Message"}<ArrowIcon className="text-[#0E100F]" />
                 </button>
 

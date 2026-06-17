@@ -2,13 +2,10 @@ import facebookIcon from "../../assets/social/facebook.svg";
 import instagramIcon from "../../assets/social/instagram.svg";
 import twitterIcon from "../../assets/social/twitter.svg";
 import linkedinIcon from "../../assets/social/linkedin.svg";
-
-import {
-  FiPhone,
-  FiMail,
-  FiMapPin,
-  FiCheckSquare,
-} from "react-icons/fi";
+import phone from "../../assets/icons/footer/phone_f.svg";
+import mail from "../../assets/icons/footer/email_f.svg";
+import location from "../../assets/icons/footer/location_f.svg";
+import clock from "../../assets/icons/footer/time_f.svg";
 
 
 
@@ -67,11 +64,11 @@ export const usefulLinks = [
 ];
 
 export const officeInfo = [
-  { icon: FiPhone, text: "+613-1701-2345" },
-  { icon: FiMail, text: "email@gmail.com" },
-  { icon: FiMapPin, text: "21 King Street 2100, Australia" },
+  { icon: phone, text: "+613-1701-2345" },
+  { icon: mail, text: "email@gmail.com" },
+  { icon: location, text: "21 King Street 2100, Australia" },
   {
-    icon: FiCheckSquare,
-    text: "Mon to Fri 9.00 am to 6.00 pm",
+    icon: clock,
+    text: "Mon to Fri\n9.00 am to 6.00 pm",
   },
 ];

@@ -5,7 +5,7 @@
 
 // const AttorneyExperienced = () => {
 //   return (
-//     <section className="relative overflow-hidden border-t border-[#FEFCE1]/25">
+//     <section aria-labelledby="attorney-experience-heading" className="relative overflow-hidden border-t border-[#FEFCE1]/25">
 //       {/* Golden curve arrow  */}
 //       <img src={curveArrow} alt="" loading="lazy" aria-hidden="true" className="hidden sm:block absolute left-0 2xl:left-1/2 2xl:translate-x-[-165%] top-20 2xl:top-16 w-85 md:w-115 lg:w-130 2xl:w-[600px] pointer-events-none select-none z-0" />
             
@@ -14,28 +14,28 @@
 //         <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-12 lg:gap-15">
 //             {/* Left Side: Image */}
 //             <div className="w-full max-w-[340px] sm:max-w-[420px] md:max-w-[460px] lg:max-w-[520px] xl:max-w-[536px] aspect-[536/730] shrink-0">
-//               <img src={attorneyImage} alt="Experienced Attorney" loading="lazy" decoding="async" className="w-full h-full object-cover"/>
+//               <img src={attorneyImage} alt="Experienced law firm attorney providing professional legal consultation Services" loading="lazy" decoding="async" className="w-full h-full object-cover"/>
 //             </div>
 
 //             {/* Right Side: Content */}
-//             <div className="flex flex-col w-full max-w-[595px] ">
+//             <div className="flex flex-col w-full max-w-[605px]">
 //               {/* Heading */}
-//               <h2 className="mb-8 lg:mb-10 font-bold text-[26px] sm:text-[30px] lg:text-[34px] xl:text-[40px] leading-[120%] text-[#FEFCE1]">
+//               <h2 id="attorney-experience-heading" className="mb-8 lg:mb-10 font-bold text-[26px] sm:text-[30px] lg:text-[34px] xl:text-[40px] leading-[120%] text-[#FEFCE1]">
 //                 Experienced Attorneys<br/>Professional Approach.
 //               </h2>
 
 //               {/* Paragraph Area with Brackets */}
 //               <div className="relative mb-10 lg:mb-16">
-//                 <span className="absolute left-0 -top-3 sm:-top-5 text-[#FEFCE1] text-[42px] md:text-[48px] font-extralight leading-none">
+//                 <span aria-hidden="true" className="absolute left-0 -top-3 sm:-top-5 text-[#FEFCE1] text-[42px] md:text-[48px] font-extralight leading-none">
 //                   {"{ "}
 //                 </span>
 //                 <div className="space-y-4 pl-4 sm:pl-5 lg:pl-6">
 //                   <p className="font-medium text-sm lg:text-base text-[#D8D6BF]/70">
-//                     We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
+//                     With years of dedicated legal practice, our team has built a reputation for excellence in handling complex cases with integrity and professionalism. We understand that legal challenges can be overwhelming, which is why we focus on providing clear communication, compassionate support, and effective advocacy to guide you through every step of the legal process.
 //                   </p>
 //                   <p className="font-medium text-sm lg:text-base leading-[150%] text-[#D8D6BF]/70">
-//                   That they cannot foresee the pain and trouble that are bound to ensue; & equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. 
-//                   <span className="align-bottom font-extralight text-[40px] md:text-[48px] text-[#FEFCE1] pl-1">
+//                     Whether you need help with business transactions, family matters, criminal defense, or other legal concerns, we offer personalized attention and strategic guidance to protect your interests & help you achieve your goals. Our commitment to justice and client success drives everything we do.
+//                   <span aria-hidden="true" className="align-bottom font-extralight text-[40px] md:text-[48px] text-[#FEFCE1] pl-1">
 //                     {'}'}
 //                   </span>
 //                 </p>
@@ -44,7 +44,7 @@
 //             </div>
           
 //             {/* Button */}
-//             <Link to="/contact" className="inline-flex items-center w-fit px-10 py-4 gap-4 rounded-full bg-[#FC8608] transition-opacity duration-300 hover:opacity-90 font-semibold text-sm md:text-base text-[#0E100F]">
+//             <Link to="/contact" aria-label="Contact our experienced attorneys for legal consultation" className="inline-flex items-center w-fit px-10 py-4 gap-4 rounded-full bg-[#FC8608] transition-opacity duration-300 hover:opacity-90 font-semibold text-sm md:text-base text-[#0E100F]">
 //               Contact Us <ArrowIcon className="text-[#0E100F]" />
 //             </Link>
 
@@ -59,8 +59,6 @@
 //   };
 
 //   export default AttorneyExperienced;
-
-
 
 
 
@@ -84,7 +82,7 @@ const AttorneyExperienced = () => {
             </div>
 
             {/* Right Side: Content */}
-            <div className="flex flex-col w-full max-w-[595px] ">
+            <div className="flex flex-col w-full max-w-[585px]">
               {/* Heading */}
               <h2 id="attorney-experience-heading" className="mb-8 lg:mb-10 font-bold text-[26px] sm:text-[30px] lg:text-[34px] xl:text-[40px] leading-[120%] text-[#FEFCE1]">
                 Experienced Attorneys<br/>Professional Approach.
@@ -97,10 +95,10 @@ const AttorneyExperienced = () => {
                 </span>
                 <div className="space-y-4 pl-4 sm:pl-5 lg:pl-6">
                   <p className="font-medium text-sm lg:text-base text-[#D8D6BF]/70">
-                    With years of dedicated legal practice, our team has built a reputation for excellence in handling complex cases with integrity and professionalism. We understand that legal challenges can be overwhelming, which is why we focus on providing clear communication, compassionate support, and effective advocacy to guide you through every step of the legal process.
+                    We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
                   </p>
                   <p className="font-medium text-sm lg:text-base leading-[150%] text-[#D8D6BF]/70">
-                    Whether you need help with business transactions, family matters, criminal defense, or other legal concerns, we offer personalized attention and strategic guidance to protect your interests & help you achieve your goals. Our commitment to justice and client success drives everything we do.
+                    That they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
                   <span aria-hidden="true" className="align-bottom font-extralight text-[40px] md:text-[48px] text-[#FEFCE1] pl-1">
                     {'}'}
                   </span>
@@ -125,5 +123,3 @@ const AttorneyExperienced = () => {
   };
 
   export default AttorneyExperienced;
-
-

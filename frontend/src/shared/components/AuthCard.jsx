@@ -115,14 +115,21 @@ const AuthCard = ({
             </button>
             {/* CHECKBOX (Signup only) */}
             {showCheckbox && (
-              <div className="flex items-center gap-2 text-sm text-[#FEFCE1]">
-                <input type="checkbox" />
-                <p>
-                  I agree to the{" "}
-                  <span className="text-[#FC8608]">Terms of Service</span> and{" "}
-                  <span className="text-[#FC8608]">Privacy Policy</span>
-                </p>
+            <label className="flex items-start gap-3 cursor-pointer">
+              <div className="relative">
+                <input type="checkbox" className="peer mt-[2px] size-4.5 appearance-none rounded-[2px] border-[1.5px] border-[#FEFCE1] checked:bg-[#FC8608] checked:border-[#FC8608]"/>
+                <span className="pointer-events-none absolute inset-0 hidden items-center justify-center text-[#0E100F] text-xs font-bold peer-checked:flex">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-0.2 top-0">
+                        <path d="M4.16699 12.0833C4.16699 12.0833 5.41699 12.0833 7.08366 14.9999C7.08366 14.9999 11.716 7.36103 15.8337 5.83325" stroke="#0E100F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </div>
+              <span className="text-base text-[#FEFCE1]">
+                I agree to the{" "}
+                <span className="text-[#FC8608]">Terms of Service</span> and{" "}
+                <span className="text-[#FC8608]">Privacy Policy</span>
+              </span>
+            </label>
             )}
           </div>
         </form>

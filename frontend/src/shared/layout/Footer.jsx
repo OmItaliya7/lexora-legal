@@ -112,7 +112,7 @@ import logo from "../../assets/icons/logo.svg";
 
 import { socialIcons, usefulLinks, officeInfo } from "../data/footerData";
 
-import { FiMail } from "react-icons/fi";
+import mail from "../../assets/icons/footer/email_f.svg";
 import ArrowIcon from "../../shared/icons/ArrowIcon";
 
 const Footer = () => {
@@ -169,8 +169,8 @@ const Footer = () => {
             <ul className="space-y-4 md:space-y-6">
               {officeInfo.map((info, i) => (
                 <li key={i} className="flex gap-4">
-                  <info.icon className="size-5 lg:size-6 shrink-0 text-[#FEFCE1]" />
-                  <span className="text-sm text-[#D8D6BF] font-medium">
+                  <img src={info.icon} alt={info.text} className="size-5 lg:size-6 shrink-0" />
+                  <span className="text-sm text-[#D8D6BF] font-medium whitespace-pre-line">
                     {info.text}
                   </span>
                 </li>
@@ -179,12 +179,12 @@ const Footer = () => {
           </div>
 
           {/* Column 4 */}
-          <div className="space-y-6 sm:pt-5">
+          <div className="space-y-6 sm:pt-5 max-w-70">
             <h3 className="text-[#FEFCE1] font-semibold text-base">
               SUBSCRIBE NOW
             </h3>
 
-            <p className="text-sm text-[#D8D6BF] max-w-70">
+            <p className="text-sm text-[#D8D6BF]">
               We’re proud that our law firm offers top-notch.
             </p>
 
@@ -192,7 +192,7 @@ const Footer = () => {
             <div className="flex py-4 items-center justify-between border-b border-[#FEFCE140]">
               <label htmlFor="newsletter-email" className="sr-only">Email Address</label>
               <input id="newsletter-email" type="email" placeholder="Your Email*" autoComplete="email" className="w-full bg-transparent outline-none text-sm lg:text-base font-medium text-[#D8D6BF] placeholder-[#D8D6BF]"/>
-              <FiMail aria-hidden="true" className="text-[#FEFCE1] size-4 xl:size-6"/>
+              <img src={mail} alt="mail" className="size-4 xl:size-6"/>
             </div>
             
             <button type="submit" className="mt-6 inline-flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 bg-[#FC8608] text-sm lg:text-base text-[#0E100F] px-6 sm:px-8 lg:px-10 py-3 lg:py-4 rounded-full font-semibold hover:opacity-90 transition">

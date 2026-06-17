@@ -22,13 +22,12 @@
 
 
 import Footer from "./Footer"   
-import { Outlet } from "react-router-dom";
-import ScrollToTop from "../components/ScrollToTop";
+import { Outlet, ScrollRestoration} from "react-router-dom";
 
 const AppLayout = () =>{
     return(
         <>
-            <ScrollToTop />
+            <ScrollRestoration />
             <Outlet />
             <Footer />
         </>

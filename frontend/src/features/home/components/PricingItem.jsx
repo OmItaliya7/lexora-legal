@@ -92,7 +92,7 @@ const PricingItem = ({title,description,highlight,premium,nonMember,compactSpaci
       </div>
 
       {/* RIGHT */}
-      <div className={`flex justify-center sm:justify-end lg:justify-between w-full gap-14 sm:gap-18 ${compactSpacing ? "lg:max-w-[490px]" : "lg:max-w-112.75"}`}>
+      <div className={`flex justify-center sm:justify-end lg:justify-between w-full gap-14 sm:gap-18 ${compactSpacing ? "lg:max-w-[484px]" : "lg:max-w-[434px]"}`}>
 
         {/* PREMIUM */}
         <div className="text-center">
@@ -108,7 +108,7 @@ const PricingItem = ({title,description,highlight,premium,nonMember,compactSpaci
         </div>
 
         {/* NON MEMBER */}
-        <div className="lg:min-w-[170px] text-center">
+        <div className="lg:min-w-[178px] text-center">
 
           <h4 className={`font-semibold text-[28px] lg:text-[32px] leading-normal text-[#FEFCE1] ${nonMember.note ? "mb-4 lg:mb-6" : ""}`}>
             {nonMember.price}

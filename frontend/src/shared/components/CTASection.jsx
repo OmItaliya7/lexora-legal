@@ -11,12 +11,12 @@ import React from "react";
 
 const FormField = React.memo(({icon, type="text", label, placeholder, textarea = false, name, value, onChange, autoComplete}) =>{
   return(
-    <div className="flex py-3 sm:py-4 border-b border-[#FEFCE1]/25">
+    <div className={`flex py-3 sm:py-4 border-b border-[#FEFCE1]/25 ${textarea ? "resize-y" : ""}`}>
       <label htmlFor={name} className="sr-only">
         {label}
       </label>
       {textarea ? (
-        <textarea required aria-required="true" id={name} name={name} value={value} onChange={onChange} rows={3} placeholder={placeholder} autoComplete={autoComplete} className="w-full resize-y bg-transparent text-sm lg:text-base text-[#FEFCE1] placeholder:text-[#D8D6BF] outline-none" />
+        <textarea required aria-required="true" id={name} name={name} value={value} onChange={onChange} rows={3} placeholder={placeholder} autoComplete={autoComplete} className="w-full bg-transparent text-sm lg:text-base text-[#FEFCE1] placeholder:text-[#D8D6BF] outline-none" />
       ) : (
         <input required aria-required="true" id={name} type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} autoComplete={autoComplete} className="w-full bg-transparent text-sm lg:text-base text-[#FEFCE1] placeholder:text-[#D8D6BF] outline-none" />
       )}
