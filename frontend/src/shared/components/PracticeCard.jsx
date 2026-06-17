@@ -23,8 +23,7 @@ const PracticeCard = ({ icon, title, desc, slug}) => {
 
       {/* BUTTON */}
       <Link to={`/practicearea/${slug}`} aria-label={`Learn more about ${title}`} className="inline-flex items-center py-4 gap-4 text-[#FC8608] font-semibold transition-colors duration-300">
-        Learn More
-        <ArrowIcon className="text-[#FEFCE1] group-hover:text-[#FC8608] transition-colors duration-300" />
+        Learn More <ArrowIcon className="text-[#FEFCE1] group-hover:text-[#FC8608] transition-colors duration-300" />
       </Link>
 
     </article>

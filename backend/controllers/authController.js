@@ -1,19 +1,17 @@
-const sendEmail = require("../utils/sendEmail");
+const sendEmail = require("../services/sendEmail");
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const asyncHandler = require("express-async-handler");
-// const jwt = require("jsonwebtoken");
 const axios = require("axios");
 const crypto = require("crypto");
 const generateToken = require("../utils/generateToken");
-const { isValidEmail, isStrongPassword } = require("../utils/validators");
+const { isValidEmail, isStrongPassword } = require("../utils/validation");
 
-
+//registerUser
 const registerUser = asyncHandler(async (req, res) => {
     const email = req.body.email?.trim().toLowerCase();
     const password = req.body.password?.trim();
 
-    // Validation
     if (!email || !password) {
         res.status(400);
         throw new Error("Please provide all fields");
@@ -24,10 +22,9 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new Error("Please enter a valid email address");
     }
     
-    // const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     if(!isStrongPassword(password)){
-        res.status(400);
-        throw new Error("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number");
+      res.status(400);
+      throw new Error("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number");
     }
 
     // Check Existing User
@@ -54,56 +51,56 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 
+//login User
 const loginUser = asyncHandler(async (req, res) => {
     const email = req.body.email?.trim().toLowerCase();
     const password = req.body.password?.trim();
-    // Check fields
+    // validate input
     if (!email || !password) {
-        res.status(400);
-        throw new Error("Please provide all fields");
+      res.status(400);
+      throw new Error("Please provide all fields");
     }
 
     if (!isValidEmail(email)) {
-        res.status(400);
-        throw new Error("Please enter a valid email address");
+      res.status(400);
+      throw new Error("Please enter a valid email address");
     }
 
     // Find user
     const user = await User.findOne({ email }).select("+password");
 
     if (!user) {
-        res.status(401);
-        throw new Error("Invalid email or password");
+      res.status(401);
+      throw new Error("Invalid email or password");
     }
 
     if (user.provider === "google") {
-        res.status(400);
-        throw new Error("This account already uses Google Sign-In. Please continue with Google.");
+      res.status(400);
+      throw new Error("This account already uses Google Sign-In. Please continue with Google.");
     }
 
+    //Check if account is locked
     if (user.lockUntil && user.lockUntil > Date.now()) {
-    const remainingMinutes = Math.ceil(
+      const remainingMinutes = Math.ceil(
         (user.lockUntil - Date.now()) / (60 * 1000)
-    );
+      );
 
-    res.status(401);
-    throw new Error(
-        `Account locked. Try again in ${remainingMinutes} minute(s).`
-    );
-}
+      res.status(401);
+      throw new Error(`Account locked. Try again in ${remainingMinutes} minute(s).`);
+    }
 
     // Compare password
     const isMatch = await bcrypt.compare(password,user.password);
 
     if (!isMatch) {
-        user.loginAttempts += 1;
-            // Lock account after 5 failed attempts
-        if (user.loginAttempts === 5) {
-            user.lockUntil = Date.now() +  10 * 60 * 1000; //10 min
-            await user.save();
-            res.status(401);
-            throw new Error("Account locked. Too many failed login attempts.");
-        }
+      user.loginAttempts += 1;
+      // Lock account after 5 failed attempts
+      if (user.loginAttempts === 5) {
+        user.lockUntil = Date.now() +  10 * 60 * 1000; //10 min
+        await user.save();
+        res.status(401);
+        throw new Error("Too many failed login attempts. Account locked for 10 minutes.");
+      }
       await user.save();
       res.status(401);
       throw new Error("Invalid Email or Password");
@@ -125,6 +122,7 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 
+//googleAuth login/register
 const googleAuth = asyncHandler(async (req, res) => {
     const { access_token } = req.body;
 
@@ -160,6 +158,7 @@ const googleAuth = asyncHandler(async (req, res) => {
     });
 });
 
+
 //forgotPassword
 const forgotPassword = asyncHandler(async (req, res) => {
   const email = req.body.email?.trim().toLowerCase();
@@ -178,10 +177,9 @@ const forgotPassword = asyncHandler(async (req, res) => {
 
   if (!user) {
     return res.status(200).json({
-    success: true,
-    message:
-      "If an account exists, a password reset email has been sent."
-  });
+      success: true,
+      message: "If an account exists, a password reset email has been sent."
+    });
   }
 
   if(user.provider === "google"){
@@ -191,13 +189,9 @@ const forgotPassword = asyncHandler(async (req, res) => {
 
   const resetToken = crypto.randomBytes(32).toString("hex");
 
-  user.resetPasswordToken = crypto
-    .createHash("sha256")
-    .update(resetToken)
-    .digest("hex");
+  user.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
 
-  user.resetPasswordExpire =
-    Date.now() + 15 * 60 * 1000; // 15 minutes
+  user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; // 15 minutes
 
   await user.save();
   const resetUrl = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
@@ -233,7 +227,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
         </p>
       </div>
       `
-);
+    );
   } catch (error) {
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
@@ -247,6 +241,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
     message: "Password reset email sent successfully",
   });
 });
+
 
 //reset password
 const resetPassword = asyncHandler(async (req, res) => {

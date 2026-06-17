@@ -19,7 +19,6 @@ const PracticeArea = () =>{
         return <Navigate to="/practicearea" replace />;
     }
     const attorney = attorneysData.find((item) => item.slug === practice.attorneySlug);
-    
     return(
         <>
             <SEO

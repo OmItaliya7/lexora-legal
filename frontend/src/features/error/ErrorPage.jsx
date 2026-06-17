@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import ArrowIcon from "../../shared/icons/ArrowIcon";
 import Header from "../../shared/layout/Header";
 import Footer from "../../shared/layout/Footer";
-import bgImage from "../../assets/images/login-bg.webp";
-import error404 from "../../assets/images/404.png";
+import bgImage from "../../assets/images/auth/login-bg.webp";
+import error404 from "../../assets/images/error/not-found.png";
 
 const ErrorPage = () => {
   return (
@@ -16,14 +16,11 @@ const ErrorPage = () => {
       <div className="relative z-10 flex flex-col max-w-[1440px] mx-auto px-5">
 
         {/* HEADER */}
-      
-            <Header />
-          
-        
+        <Header />
 
         {/* CENTER CONTENT */}
-        <div className="flex items-center justify-center px-4 sm:px-6 pt-[68px] pb-[170px]">
-          <div className="flex flex-col gap-[54px] items-center text-center">
+        <div className="flex items-center justify-center px-4 sm:px-6 pt-17 pb-42.5">
+          <div className="flex flex-col gap-13.5 items-center text-center">
 
             {/* 404 IMAGE */}
             <img src={error404} alt="404" loading="eager" />
@@ -36,7 +33,7 @@ const ErrorPage = () => {
             <div className="flex flex-col justify-center items-center gap-3">
               
               {/* MAIN HEADING */}
-              <h1 className="text-[#FEFCE1] text-[28px] sm:text-[34px] lg:text-[38px] font-semibold leading-[48px]">
+              <h1 className="text-[#FEFCE1] text-[28px] sm:text-[34px] lg:text-[38px] font-semibold leading-12">
                 Seems you are lost, go back home.
               </h1>
 
@@ -53,9 +50,7 @@ const ErrorPage = () => {
               Back To Homepage
               <ArrowIcon className="text-[#0E100F]" />
             </Link>
-
-
-
+            
           </div>
         </div>
       </div>

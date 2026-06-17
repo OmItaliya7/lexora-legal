@@ -1,13 +1,11 @@
-import facebookIcon from "../../assets/social/facebook.svg";
-import instagramIcon from "../../assets/social/instagram.svg";
-import twitterIcon from "../../assets/social/twitter.svg";
-import linkedinIcon from "../../assets/social/linkedin.svg";
+import facebookIcon from "../../assets/icons/social/facebook.svg";
+import instagramIcon from "../../assets/icons/social/instagram.svg";
+import twitterIcon from "../../assets/icons/social/twitter.svg";
+import linkedinIcon from "../../assets/icons/social/linkedin.svg";
 import phone from "../../assets/icons/footer/phone_f.svg";
 import mail from "../../assets/icons/footer/email_f.svg";
 import location from "../../assets/icons/footer/location_f.svg";
 import clock from "../../assets/icons/footer/time_f.svg";
-
-
 
 /* SOCIAL LINKS */
 export const socialIcons = [
@@ -67,8 +65,5 @@ export const officeInfo = [
   { icon: phone, text: "+613-1701-2345" },
   { icon: mail, text: "email@gmail.com" },
   { icon: location, text: "21 King Street 2100, Australia" },
-  {
-    icon: clock,
-    text: "Mon to Fri\n9.00 am to 6.00 pm",
-  },
+  { icon: clock, text: "Mon to Fri\n9.00 am to 6.00 pm" },
 ];

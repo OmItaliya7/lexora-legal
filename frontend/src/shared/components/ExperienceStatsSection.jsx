@@ -39,7 +39,6 @@ const ExperienceStatsSection = () => {
 
           {/* STATS */}
           <ul className="flex flex-wrap justify-center gap-y-12 gap-x-10 sm:gap-x-16 md:gap-x-20 lg:gap-x-32">
-            
             {stats.map((item) => (
               <li key={item.number} className="text-center">
 
@@ -59,11 +58,10 @@ const ExperienceStatsSection = () => {
                 
               </li>
             ))}
-
           </ul>
 
         </div>
-        </div>
+      </div>
     </section>
   );
 };

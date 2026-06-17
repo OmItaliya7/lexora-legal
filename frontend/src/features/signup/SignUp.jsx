@@ -2,8 +2,8 @@ import AuthLayout from "../../shared/components/AuthLayout";
 import AuthCard from "../../shared/components/AuthCard";
 import SEO from "../../shared/components/SEO";
 
-import facebookIcon from "../../assets/social/facebook-black.svg";
-import googleIcon from "../../assets/social/google.svg";
+import facebookIcon from "../../assets/icons/social/facebook-black.svg";
+import googleIcon from "../../assets/icons/social/google.svg";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";

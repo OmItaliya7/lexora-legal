@@ -1,5 +1,5 @@
 import Header from "../layout/Header.jsx"
-import bgImage from "../../assets/images/login-bg.webp"
+import bgImage from "../../assets/images/auth/login-bg.webp"
 
 const AuthLayout = ({ children }) =>{
     return (
@@ -13,7 +13,7 @@ const AuthLayout = ({ children }) =>{
             <div className="max-w-[1200px] mx-auto">
                 <Header />
                 {/* Wrapper for spacing */}
-                <div className="flex justify-center py-17.5 md:py-20 xl:pt-[91px] xl:pb-[105px] border-b border-[#FEFCE1]/25">
+                <div className="flex justify-center py-17.5 md:py-20 xl:pt-22.75 xl:pb-26.25 border-b border-[#FEFCE1]/25">
                     {children}
                 </div>
             </div>

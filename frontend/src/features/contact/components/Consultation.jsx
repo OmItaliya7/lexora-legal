@@ -1,4 +1,4 @@
-import formImage from "../../../assets/images/contact-form.webp";
+import formImage from "../../../assets/images/contact/contact-form.webp";
 import userIcon from "../../../assets/icons/form/user.svg";
 import emailIcon from "../../../assets/icons/form/email.svg";
 import phoneIcon from "../../../assets/icons/form/phone.svg";
@@ -165,8 +165,8 @@ const Consultation = () => {
               <div className="flex flex-col md:flex-row">
 
                 {/* CHECKBOX */}
-                <label htmlFor="terms" className="inline-flex items-start gap-[5px] text-sm text-[#D8D6BF] font-medium">
-                  <div className="relative mt-[2px]">
+                <label htmlFor="terms" className="inline-flex items-start gap-1.25 text-sm text-[#D8D6BF] font-medium">
+                  <div className="relative mt-0.5">
                     <input
                       id="terms"
                       type="checkbox"

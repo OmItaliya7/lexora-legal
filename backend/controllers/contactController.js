@@ -1,5 +1,5 @@
 const Contact = require("../models/Contact");
-const { isValidEmail, isValidPhone, isValidMessage } = require("../utils/validators");
+const { isValidEmail, isValidPhone, isValidMessage } = require("../utils/validation");
 
 const asyncHandler =
   require("express-async-handler");

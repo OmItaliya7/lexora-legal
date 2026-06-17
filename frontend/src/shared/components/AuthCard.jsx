@@ -1,8 +1,8 @@
 import { FiX } from "react-icons/fi";
 import {useState} from "react";
 import userIcon from "../../assets/icons/user-icon.svg";
-import showPasswordIcon from "../../assets/icons/PassWordVisiblity/showPassword.svg";
-import hidePasswordIcon from "../../assets/icons/PassWordVisiblity/hidePassword.svg";
+import showPasswordIcon from "../../assets/icons/password-visibility/showPassword.svg";
+import hidePasswordIcon from "../../assets/icons/password-visibility/hidePassword.svg";
 
 const SocialButton = ({ icon, text, alt, onClick }) => {
   return (
@@ -17,8 +17,7 @@ const InputField = ({ label , type = "text", name, value, onChange, autoComplete
   const [showPassword, setShowPassword] = useState(false);
   const isPasswordField = type === "password";
   return (
-    <div className="text-left">
-      
+    <div className="text-left">  
         <label htmlFor={name} className="text-xs lg:text-base block pb-2 text-[#D8D6BF]">
           {label}
         </label>
@@ -55,7 +54,6 @@ const AuthCard = ({
       <span aria-hidden="true" className="absolute top-2 right-2 lg:top-8 lg:right-8 text-[#666666]">
         <FiX size={32} />
       </span>
-
 
         {/* HEADER */}
         <div className="mb-10">

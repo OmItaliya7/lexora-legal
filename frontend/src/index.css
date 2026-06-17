@@ -7,10 +7,6 @@
     box-sizing: border-box;
   }
 
-  /* html {
-    scroll-behavior: smooth;
-  } */
-
   body {
     background-color: #0E100F;
     font-family: "Plus Jakarta Sans";
@@ -24,7 +20,6 @@
     cursor: pointer;
   }
 }
-
 
 .practice-icon path {
   stroke: #FEFCE1;

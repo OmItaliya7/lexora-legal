@@ -79,25 +79,25 @@ const CTASection = () => {
       <div className="max-w-[1440px] mx-auto px-5">
         <div className="max-w-[1200px] mx-auto py-17.5 md:py-22.5 lg:py-25">
         
-        {/* TITLE */}
-        <h2 id="consultation-heading" className="mb-8 sm:mb-12 lg:mb-18 text-center font-bold text-[30px] sm:text-[36px] lg:text-[40px] leading-[120%] text-[#FEFCE1]">
-          Request a Free <br /> Legal Consultation
-        </h2>
+          {/* TITLE */}
+          <h2 id="consultation-heading" className="mb-8 sm:mb-12 lg:mb-18 text-center font-bold text-[30px] sm:text-[36px] lg:text-[40px] leading-[120%] text-[#FEFCE1]">
+            Request a Free <br /> Legal Consultation
+          </h2>
 
-        {/* FORM */}
-        <form onSubmit={handleSubmit} aria-label="Free legal consultation form">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-[30px]">
-            <FormField type="text" label="Full Name" name="name" value={formData.name} onChange={handleChange} icon={userIcon} placeholder="Your Name*" autoComplete="name" />
-            <FormField type="email" label="Email Address" name="email" value={formData.email} onChange={handleChange} icon={emailIcon} placeholder="Your Email*" autoComplete="email" />
-            <FormField type="text" label="Phone Number" name="phone" value={formData.phone} onChange={handleChange} icon={phoneIcon} placeholder="Your Phone*" autoComplete="tel" />
-          </div>
-          <div className="max-w-[480px] lg:max-w-[570px] mx-auto mt-8 ">
-            <FormField type="text" label="Message" name="message" value={formData.message} onChange={handleChange} icon={messageIcon} placeholder="Describe Your Legal Matter*" textarea autoComplete="off" />
-          </div>
-          <button type="submit" disabled={loading} className="mx-auto mt-10 sm:mt-12 lg:mt-23 flex items-center gap-4 rounded-full bg-[#FC8608] px-10 py-4 font-semibold text-sm md:text-base text-[#0E100F] hover:opacity-90 transition-opacity">
-            {loading ? "Sending..." : "Send Message"} <ArrowIcon className="text-[#0E100F]" />
-          </button> 
-        </form>
+          {/* FORM */}
+          <form onSubmit={handleSubmit} aria-label="Free legal consultation form">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7.5">
+              <FormField type="text" label="Full Name" name="name" value={formData.name} onChange={handleChange} icon={userIcon} placeholder="Your Name*" autoComplete="name" />
+              <FormField type="email" label="Email Address" name="email" value={formData.email} onChange={handleChange} icon={emailIcon} placeholder="Your Email*" autoComplete="email" />
+              <FormField type="text" label="Phone Number" name="phone" value={formData.phone} onChange={handleChange} icon={phoneIcon} placeholder="Your Phone*" autoComplete="tel" />
+            </div>
+            <div className="max-w-[480px] lg:max-w-[570px] mx-auto mt-8 ">
+              <FormField type="text" label="Message" name="message" value={formData.message} onChange={handleChange} icon={messageIcon} placeholder="Describe Your Legal Matter*" textarea autoComplete="off" />
+            </div>
+            <button type="submit" disabled={loading} className="mx-auto mt-10 sm:mt-12 lg:mt-23 flex items-center gap-4 rounded-full bg-[#FC8608] px-10 py-4 font-semibold text-sm md:text-base text-[#0E100F] hover:opacity-90 transition-opacity">
+              {loading ? "Sending..." : "Send Message"} <ArrowIcon className="text-[#0E100F]" />
+            </button> 
+          </form>
         </div>
         
       </div>

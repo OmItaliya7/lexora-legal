@@ -1,5 +1,5 @@
 import PracticeCard from "../../../shared/components/PracticeCard";
-import { practiceAreasData } from "../../practiceareas/data/practiceAreasData";
+import { practiceAreasData } from "../../practice-areas/data/practiceAreasData";
 import goldenArrow from "../../../assets/decorations/practice-arrow.webp";
 
 const PracticeSection = () => {
@@ -22,9 +22,9 @@ const PracticeSection = () => {
             <PracticeCard key={card.slug} icon={card.icon} title={card.title} desc={card.desc} active={card.active} slug={card.slug} />
           ))}
         </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 

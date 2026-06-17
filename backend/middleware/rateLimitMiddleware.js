@@ -45,5 +45,4 @@ const forgotPasswordLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-
 module.exports = { loginLimiter, registerLimiter, contactLimiter, forgotPasswordLimiter };

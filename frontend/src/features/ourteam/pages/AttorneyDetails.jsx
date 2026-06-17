@@ -1,22 +1,13 @@
-import { useParams } from "react-router-dom";
-
+import { useParams, Navigate } from "react-router-dom";
 import { attorneysData } from "../data/attorneysData";
-
 import AttorneyDetailsHero from "../components/AttorneyDetailsHero";
-
 import OurAttorneys  from "../../home/components/OurAttorneys";
-
 import Testimonials from "../../../shared/components/Testimonials";
 import CTASection from "../../../shared/components/CTASection";
-
 import relatedArrow from "../../../assets/decorations/our-team-arrow.webp";
-import { Navigate } from "react-router-dom";
-
 import SEO from "../../../shared/components/SEO";
 
-
 const AttorneyDetails = () => {
-
   const { slug } = useParams();
 
   const attorney = attorneysData.find(
