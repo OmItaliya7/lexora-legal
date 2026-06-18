@@ -13,7 +13,7 @@ const ErrorPage = () => {
       <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(${bgImage})`}}/>
 
       {/* CONTENT */}
-      <div className="relative z-10 flex flex-col max-w-[1440px] mx-auto px-5">
+      <div className="relative z-10 flex flex-col container-main">
 
         {/* HEADER */}
         <Header />
@@ -25,7 +25,7 @@ const ErrorPage = () => {
             {/* 404 IMAGE */}
             <img src={error404} alt="404" loading="eager" />
             {/* SUBTITLE */}
-            <p className="text-[#FEFCE1] text-[28px] sm:text-[34px] lg:text-[40px] font-extralight">
+            <p className="text-light text-[28px] sm:text-[34px] lg:text-[40px] font-extralight">
               page not found
             </p>
             
@@ -33,12 +33,12 @@ const ErrorPage = () => {
             <div className="flex flex-col justify-center items-center gap-3">
               
               {/* MAIN HEADING */}
-              <h1 className="text-[#FEFCE1] text-[28px] sm:text-[34px] lg:text-[38px] font-semibold leading-12">
+              <h1 className="text-light text-[28px] sm:text-[34px] lg:text-[38px] font-semibold leading-12">
                 Seems you are lost, go back home.
               </h1>
 
               {/* DESCRIPTION */}
-              <p className="max-w-[500px] text-[#D8D6BF] text-sm sm:text-base lg:text-lg">
+              <p className="max-w-[500px] text-gray text-sm sm:text-base lg:text-lg">
                 Sorry but the page you are looking for does not exist,
                 have been removed, name changed or is temporarily unavailable
               </p>
@@ -46,9 +46,9 @@ const ErrorPage = () => {
             </div>
 
             {/* BUTTON */}
-            <Link to="/" className="self-center flex items-center gap-4 bg-[#FC8608] hover:opacity-90 transition-opacity text-[#0E100F] font-semibold px-10 py-4 rounded-full text-sm md:text-base">
+            <Link to="/" className="self-center flex items-center gap-4 bg-secondary hover:opacity-90 transition-opacity text-primary font-semibold px-10 py-4 rounded-full text-sm md:text-base">
               Back To Homepage
-              <ArrowIcon className="text-[#0E100F]" />
+              <ArrowIcon className="text-primary" />
             </Link>
             
           </div>

@@ -26,7 +26,7 @@ const AboutStorySection = () => {
   return (
     <section className="relative overflow-hidden py-12.5">
       <img src={arrowDecor} alt="" aria-hidden="true" loading="lazy" className="hidden sm:block absolute inset-0 w-full h-full pointer-events-none select-none" />
-      <div className="max-w-[1440px] mx-auto px-5">
+      <div className="container-main">
         <div className="mx-auto" style={{maxWidth: currentStory.maxWidth}}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -48,12 +48,12 @@ const AboutStorySection = () => {
 
       {/* Navigation */}
       <div className="mt-10 lg:mt-12.5 flex justify-center gap-5">
-        <button onClick={prevSlide} aria-label="Previous slide" className="group w-10 h-10 rounded-full border border-[#FEFCE1] flex items-center justify-center hover:bg-[#FEFCE1] transition-all duration-300">
-          <ArrowLeft className="text-[#FEFCE1] group-hover:text-[#0E100F]" />
+        <button onClick={prevSlide} aria-label="Previous slide" className="group w-10 h-10 rounded-full border border-light flex items-center justify-center hover:bg-light transition-all duration-300">
+          <ArrowLeft className="text-light group-hover:text-primary" />
         </button>
 
-        <button onClick={nextSlide} aria-label="Next slide" className="group w-10 h-10 rounded-full border border-[#FEFCE1] flex items-center justify-center hover:bg-[#FEFCE1] transition-all duration-300">
-          <ArrowRight className="text-[#FEFCE1] group-hover:text-[#0E100F]" />
+        <button onClick={nextSlide} aria-label="Next slide" className="group w-10 h-10 rounded-full border border-light flex items-center justify-center hover:bg-light transition-all duration-300">
+          <ArrowRight className="text-light group-hover:text-primary" />
         </button>
 
       </div>

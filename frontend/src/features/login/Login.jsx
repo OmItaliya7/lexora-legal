@@ -108,7 +108,7 @@ const handleSubmit = async (e) => {
         ]}
         additionalContent={
           <div className="mt-5 text-right">
-            <Link to="/forgot-password" className="text-[#FC8608] hover:opacity-[0.9]">Forgot Password</Link>
+            <Link to="/forgot-password" className="text-secondary hover:opacity-[0.9]">Forgot Password</Link>
           </div>
         }
       />

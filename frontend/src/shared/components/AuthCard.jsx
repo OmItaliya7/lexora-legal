@@ -48,7 +48,7 @@ const AuthCard = ({
   additionalContent,
 }) => {
   return (
-    <div className="w-full max-w-[670px] border border-[#FEFCE1] bg-[#0E100F] px-8 py-6 sm:px-12 sm:py-7.5 lg:pl-16 lg:pr-20 text-center relative">
+    <div className="w-full max-w-[670px] border border-light bg-primary px-8 py-6 sm:px-12 sm:py-7.5 lg:pl-16 lg:pr-20 text-center relative">
 
       {/* Close */}
       <span aria-hidden="true" className="absolute top-2 right-2 lg:top-8 lg:right-8 text-[#666666]">
@@ -58,11 +58,11 @@ const AuthCard = ({
         {/* HEADER */}
         <div className="mb-10">
           <img src={userIcon} alt="" aria-hidden="true" className="mx-auto mb-6" />
-          <h2 id="auth-heading" className="text-[#FEFCE1] text-xl sm:text-2xl lg:text-[32px] mb-0.5">
+          <h2 id="auth-heading" className="text-light text-xl sm:text-2xl lg:text-[32px] mb-0.5">
             {title}
           </h2>
 
-          <p className=" text-xs sm:text-sm lg:text-base text-[#D8D6BF]">
+          <p className=" text-xs sm:text-sm lg:text-base text-gray">
             {subtitle}
           </p>
         </div>
@@ -86,17 +86,17 @@ const AuthCard = ({
 
         {/* DIVIDER */}
         <div className="flex items-center gap-3 sm:gap-4 lg:gap-5.5 mb-10">
-          <div className="flex-1 h-0.5 bg-[#403F38]" />
-          <span className="text-xs sm:text-sm lg:text-[24px] text-[#403F38]">
+          <div className="flex-1 h-0.5 bg-dark-gray" />
+          <span className="text-xs sm:text-sm lg:text-[24px] text-dark-gray">
             OR
           </span>
-          <div className="flex-1 h-0.5 bg-[#403F38]" />
+          <div className="flex-1 h-0.5 bg-dark-gray" />
         </div>
 
         {/* INPUTS */}
         <form onSubmit={onSubmit}>
           <div className="mb-10 space-y-6">
-            <p className="text-xs sm:text-sm lg:text-lg text-[#D8D6BF]">
+            <p className="text-xs sm:text-sm lg:text-lg text-gray">
               {description}
             </p>
 
@@ -108,24 +108,24 @@ const AuthCard = ({
 
           {/* BUTTON */}
           <div className="space-y-5">
-            <button type="submit" disabled={loading} className="w-full border border-[#FEFCE1] px-4 sm:px-5 py-3 lg:py-4.5 rounded-full font-semibold text-xl text-[#FEFCE1] hover:bg-white hover:text-black transition">
+            <button type="submit" disabled={loading} className="w-full border border-light px-4 sm:px-5 py-3 lg:py-4.5 rounded-full font-semibold text-xl text-light hover:bg-white hover:text-black transition">
               {buttonText}
             </button>
             {/* CHECKBOX (Signup only) */}
             {showCheckbox && (
             <label className="flex items-start gap-3 cursor-pointer">
               <div className="relative">
-                <input type="checkbox" className="peer mt-[2px] size-4.5 appearance-none rounded-[2px] border-[1.5px] border-[#FEFCE1] checked:bg-[#FC8608] checked:border-[#FC8608]"/>
-                <span className="pointer-events-none absolute inset-0 hidden items-center justify-center text-[#0E100F] text-xs font-bold peer-checked:flex">
+                <input type="checkbox" className="peer mt-[2px] size-4.5 appearance-none rounded-[2px] border-[1.5px] border-light checked:bg-secondary checked:border-secondary"/>
+                <span className="pointer-events-none absolute inset-0 hidden items-center justify-center text-primary text-xs font-bold peer-checked:flex">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-0.2 top-0">
                         <path d="M4.16699 12.0833C4.16699 12.0833 5.41699 12.0833 7.08366 14.9999C7.08366 14.9999 11.716 7.36103 15.8337 5.83325" stroke="#0E100F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </div>
-              <span className="text-base text-[#FEFCE1]">
+              <span className="text-base text-light">
                 I agree to the{" "}
-                <span className="text-[#FC8608]">Terms of Service</span> and{" "}
-                <span className="text-[#FC8608]">Privacy Policy</span>
+                <span className="text-secondary">Terms of Service</span> and{" "}
+                <span className="text-secondary">Privacy Policy</span>
               </span>
             </label>
             )}

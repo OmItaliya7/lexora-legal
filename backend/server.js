@@ -1,5 +1,6 @@
 require("dotenv").config();
 const connectDB = require("./config/db");
+const rateLimit = require("express-rate-limit");
 
 const express = require("express");
 const cors = require("cors");
@@ -13,6 +14,24 @@ const swaggerSpec = require("./docs/swagger");
 const swaggerUi = require("swagger-ui-express");
 
 const app = express();
+
+const globalLimiter = rateLimit({
+
+windowMs:15*60*1000,
+
+max:300,
+
+message:{
+success:false,
+message:"Too many requests"
+},
+
+standardHeaders:true,
+legacyHeaders:false
+
+});
+
+app.use(globalLimiter);
 
 // Required for Render / Railway / Heroku
 app.set("trust proxy", 1);

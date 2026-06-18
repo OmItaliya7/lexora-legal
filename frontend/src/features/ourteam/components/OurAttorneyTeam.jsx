@@ -16,10 +16,10 @@ const OurAttorneyTeam = () => {
       {/* GOLDEN ARROW */}
       <img src={arrowRight} alt="" loading="lazy" aria-hidden="true" className="hidden sm:block absolute right-0 top-1 w-[190px] lg:w-auto pointer-events-none"/>
       
-      <div className="max-w-[1440px] mx-auto px-5">
-        <div className="max-w-[1200px] mx-auto py-17.5 md:py-22.5 lg:py-25 border-b border-[#FEFCE1]/20">
+      <div className="container-main">
+        <div className="container-content py-17.5 md:py-22.5 lg:py-25 border-b border-light/20">
           {/* TITLE */}
-          <h2 id="our-attorneys-heading" className="mb-12 sm:mb-15 lg:mb-17.5 text-center font-bold text-3xl md:text-[40px] leading-[120%] text-[#FEFCE1]">
+          <h2 id="our-attorneys-heading" className="mb-12 sm:mb-15 lg:mb-17.5 text-center font-bold text-3xl md:text-[40px] leading-[120%] text-light">
             Our Attorneys
           </h2>
 
@@ -27,7 +27,7 @@ const OurAttorneyTeam = () => {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-11.25">
             {orderedAttorneys.map((item, i) => (
               <li key={`${item.id}-${i}`}>
-                <AttorneyCard {...item} arrowColor="text-[#FC8608]"/>
+                <AttorneyCard {...item} arrowColor="text-secondary"/>
               </li>
             ))}
           </ul>

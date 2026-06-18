@@ -21,6 +21,11 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(400);
         throw new Error("Please enter a valid email address");
     }
+
+    if(email.length > 254){
+        res.status(400);
+        throw new Error("Email address is too long");
+    }
     
     if(!isStrongPassword(password)){
       res.status(400);
@@ -64,6 +69,11 @@ const loginUser = asyncHandler(async (req, res) => {
     if (!isValidEmail(email)) {
       res.status(400);
       throw new Error("Please enter a valid email address");
+    }
+
+    if(email.length > 254){
+        res.status(400);
+        throw new Error("Email address is too long");
     }
 
     // Find user
@@ -134,6 +144,12 @@ const googleAuth = asyncHandler(async (req, res) => {
     const googleResponse = await axios.get( "https://www.googleapis.com/oauth2/v2/userinfo", { headers: {Authorization: `Bearer ${access_token}` }});
 
     const { email } = googleResponse.data;
+    
+    if(email.length > 254){
+      res.status(400);
+      throw new Error("Email address is too long");
+    }
+    
     let user = await User.findOne({ email });
     
     if(user && user.provider === "local"){
@@ -158,7 +174,6 @@ const googleAuth = asyncHandler(async (req, res) => {
     });
 });
 
-
 //forgotPassword
 const forgotPassword = asyncHandler(async (req, res) => {
   const email = req.body.email?.trim().toLowerCase();
@@ -171,6 +186,11 @@ const forgotPassword = asyncHandler(async (req, res) => {
   if(!isValidEmail(email)){
     res.status(400);
     throw new Error("Please enter a valid email address");
+  }
+
+  if(email.length > 254){
+    res.status(400);
+    throw new Error("Email address is too long");
   }
 
   const user = await User.findOne({ email });

@@ -7,10 +7,10 @@ const OthersPracticeAreas = () => {
   const cards = practiceAreasData.slice(-3);
 
   return (
-    <section aria-labelledby="other-practice-areas-heading" className="max-w-[1440px] mx-auto px-5">
-      <div className="max-w-[1200px] mx-auto py-17.5 md:py-22.5 lg:py-25">
+    <section aria-labelledby="other-practice-areas-heading" className="container-main">
+      <div className="container-content py-17.5 md:py-22.5 lg:py-25">
         {/* TITLE */}
-        <h2 id="other-practice-areas-heading" className="max-w-[340px] font-bold text-2xl sm:text-3xl lg:text-[40px] leading-[120%] text-[#FEFCE1]">
+        <h2 id="other-practice-areas-heading" className="max-w-[340px] font-bold text-2xl sm:text-3xl lg:text-[40px] leading-[120%] text-light">
           Our Other Legal Practice Areas
         </h2>
         {/* CARDS */}

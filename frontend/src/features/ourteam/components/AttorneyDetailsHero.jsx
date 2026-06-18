@@ -40,33 +40,33 @@ const AttorneyDetailsHero = ({ attorney }) => {
       <div className="absolute inset-0 bg-[linear-gradient(184.4deg,rgba(14,16,15,0.84)_10.02%,#0E100F_66.68%)]" />
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-5">
-        <div className="max-w-[1200px] mx-auto">
+      <div className="relative z-10 container-main">
+        <div className="container-content">
           {/* HEADER */}
           <Header />
 
           {/* MAIN SECTION */}
-          <div className="flex flex-col-reverse lg:flex-row items-center py-12 lg:py-16 gap-10 lg:gap-16 xl:gap-24.75 border-b border-[#FEFCE1]/20">
+          <div className="flex flex-col-reverse lg:flex-row items-center py-12 lg:py-16 gap-10 lg:gap-16 xl:gap-24.75 border-b border-light/20">
 
             {/* LEFT */}
-            <div className="space-y-8 lg:space-y-10.5 px-5 sm:px-7 xl:px-12.5 py-5 xl:py-7 bg-[#0E100F] border border-[#FEFCE1]">
+            <div className="space-y-8 lg:space-y-10.5 px-5 sm:px-7 xl:px-12.5 py-5 xl:py-7 bg-primary border border-light">
               
               <div className="space-y-4">
 
                 {/* NAME */}
-                <h1 className="font-bold text-4xl sm:text-5xl lg:text-[56px] leading-[120%] text-[#FEFCE1]">
+                <h1 className="font-bold text-4xl sm:text-5xl lg:text-[56px] leading-[120%] text-light">
                   {attorney.name}
                 </h1>
 
                 {/* ROLE */}
-                <p className="text-base lg:text-lg text-[#D8D6BF]">
+                <p className="text-base lg:text-lg text-gray">
                   {attorney.role}
                 </p>
 
                 {/* EXPERTISE */}
-                <div className="flex flex-wrap gap-3 py-5 border-y border-[#FEFCE1]/25">
+                <div className="flex flex-wrap gap-3 py-5 border-y border-light/25">
                   {attorney.expertise.map((item, i) => (
-                    <span key={i} className="border border-[#D8D6BF] px-4 py-2 sm:px-5 lg:px-10 lg:py-4 rounded-full text-[#D8D6BF] font-medium text-xs">
+                    <span key={i} className="border border-gray px-4 py-2 sm:px-5 lg:px-10 lg:py-4 rounded-full text-gray font-medium text-xs">
                       {item}
                     </span>
                   ))}
@@ -77,11 +77,11 @@ const AttorneyDetailsHero = ({ attorney }) => {
               <div className="space-y-5.5">
                 <div className="space-y-4">
 
-                  <h2 className="text-2xl sm:text-[28px] text-[#FEFCE1]">
+                  <h2 className="text-2xl sm:text-[28px] text-light">
                     About {firstName}
                   </h2>
 
-                  <p className="max-w-[630px] text-base sm:text-lg text-[#D8D6BF]/60">
+                  <p className="max-w-[630px] text-base sm:text-lg text-gray/60">
                     {attorney.about}
                   </p>
 
@@ -103,15 +103,15 @@ const AttorneyDetailsHero = ({ attorney }) => {
                 </div>
 
                 {/* BUTTON */}
-                <button className="inline-flex items-center py-4 gap-4 font-semibold text-base text-[#FC8608]">
-                  Hire Now <ArrowIcon className="text-[#FC8608]" />
+                <button className="inline-flex items-center py-4 gap-4 font-semibold text-base text-secondary">
+                  Hire Now <ArrowIcon className="text-secondary" />
                 </button>
               </div>
 
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="w-full max-w-[380px] bg-[#FEFCE1] border border-[#FEFCE1]">
+            <div className="w-full max-w-[380px] bg-light border border-light">
               <img src={attorney.image} alt={attorney.name} fetchPriority="high" className="w-full object-cover"/>
             </div>
 

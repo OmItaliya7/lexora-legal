@@ -45,10 +45,10 @@ const Testimonials = () => {
     <section aria-labelledby="testimonials-heading" className="relative overflow-hidden">
       <img src={arrowDecor} alt="" aria-hidden="true" loading="lazy" className="hidden sm:block absolute left-0 top-[10px] lg:top-[25px] 2xl:top-1 w-40 lg:w-50 2xl:w-62.5 pointer-events-none select-none"/>
 
-      <div className="max-w-[1440px] mx-auto px-5">
-        <div className="max-w-[1200px] mx-auto py-17.5 md:py-22.5 lg:py-25">
+      <div className="container-main">
+        <div className="container-content py-17.5 md:py-22.5 lg:py-25">
 
-          <h2 id="testimonials-heading" className="mb-12 lg:mb-17.5 font-bold text-3xl sm:text-4xl lg:text-[40px] text-[#FEFCE1] text-center">
+          <h2 id="testimonials-heading" className="mb-12 lg:mb-17.5 font-bold text-3xl sm:text-4xl lg:text-[40px] text-light text-center">
             What Our Clients Say
           </h2>
           
@@ -66,12 +66,12 @@ const Testimonials = () => {
 
           {/* Navigation Arrows */}
           <div className="flex justify-center gap-5 lg:gap-6 mt-10">
-            <button onClick={prevSlide} disabled={index === 0} aria-label="Previous slide" className="group w-10 h-10 rounded-full border border-[#FEFCE1] flex items-center justify-center text-[#FEFCE1] hover:bg-[#FEFCE1] transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed">
-              <ArrowLeft className="text-[#FEFCE1] group-hover:text-[#0E100F] transition-colors duration-300" />
+            <button onClick={prevSlide} disabled={index === 0} aria-label="Previous slide" className="group w-10 h-10 rounded-full border border-light flex items-center justify-center text-light hover:bg-light transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed">
+              <ArrowLeft className="text-light group-hover:text-primary transition-colors duration-300" />
             </button>
 
-            <button onClick={nextSlide} disabled={index >= maxIndex} aria-label="Next slide" className="group w-10 h-10 rounded-full border border-[#FEFCE1] flex items-center justify-center text-[#FEFCE1] hover:bg-[#FEFCE1] transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed">
-              <ArrowRight className="text-[#FEFCE1] group-hover:text-[#0E100F] transition-colors duration-300" />
+            <button onClick={nextSlide} disabled={index >= maxIndex} aria-label="Next slide" className="group w-10 h-10 rounded-full border border-light flex items-center justify-center text-light hover:bg-light transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed">
+              <ArrowRight className="text-light group-hover:text-primary transition-colors duration-300" />
             </button>
           </div>
 

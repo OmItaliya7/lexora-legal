@@ -2,13 +2,49 @@
 
 @import "tailwindcss";
 
+/* ===========================
+   Theme Tokens
+=========================== */
+@theme {
+
+  /* Brand Colors */
+  --color-primary: #0E100F;
+  --color-secondary: #FC8608;
+  --color-tertiary: #32332F;
+
+  /* Text Colors */
+  --color-light: #FEFCE1;
+  --color-gray: #D8D6BF;
+  --color-dark-gray: #403F38;
+
+  --color-gold: #D1B06B;
+
+
+}
+
+@layer components{
+
+  .container-main{
+    @apply max-w-[1440px] mx-auto px-5;
+  }
+
+  .container-content{
+    @apply max-w-[1200px] mx-auto;
+  }
+  /* .section-padding{
+    @apply py-17.5 md:py-22.5 lg:py-25;
+  } */
+}
+
 @layer base {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 
   body {
-    background-color: #0E100F;
+    background-color: var(--color-primary);
     font-family: "Plus Jakarta Sans";
   }
 
@@ -22,10 +58,10 @@
 }
 
 .practice-icon path {
-  stroke: #FEFCE1;
+  stroke: var(--color-light);
   transition: stroke 0.4s ease-in-out;
 }
 
 .group:hover .practice-icon path {
-  stroke: #0E100F;
+  stroke: var(--color-primary);
 }

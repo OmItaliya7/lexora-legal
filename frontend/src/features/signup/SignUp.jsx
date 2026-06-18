@@ -93,7 +93,7 @@ const handleSubmit = async (e) => {
         subtitle={
           <>
             Already have an account?{" "}
-            <Link to="/login" className="text-[#FC8608] hover:opacity-[0.9]">Login</Link>
+            <Link to="/login" className="text-secondary hover:opacity-[0.9]">Login</Link>
           </>
         }
         description="Enter your details to create an account."

@@ -48,10 +48,10 @@ const ForgotPassword = () => {
     />
     <AuthLayout>
 
-      <div className="w-full max-w-[640px] border border-[#FEFCE1] bg-[#0E100F] px-8 py-8 sm:px-12 sm:py-10">
+      <div className="w-full max-w-[640px] border border-light bg-primary px-8 py-8 sm:px-12 sm:py-10">
         {!emailSent ? (
           <>
-        <h1 id="forgot-password-heading" className="text-3xl text-[#FEFCE1] mb-6">
+        <h1 id="forgot-password-heading" className="text-3xl text-light mb-6">
           Forgot Password
         </h1>
         <form aria-label="Forgot password form" onSubmit={handleSubmit}>
@@ -66,29 +66,29 @@ const ForgotPassword = () => {
             autoComplete="email"
             disabled={loading}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-[#403F38] bg-transparent rounded-full px-5 py-4 text-white"
+            className="w-full border border-gray bg-transparent rounded-full px-5 py-4 text-white"
           />
 
-          <button type="submit" disabled={loading} className="w-full mt-6 border border-[#FEFCE1] rounded-full py-4 text-[#FEFCE1]">
+          <button type="submit" disabled={loading} className="w-full mt-6 border border-light rounded-full py-4 text-light">
             {loading ? "Sending..." : "Send Reset Link"}
           </button>
         
         </form>
 
-        <Link to="/login" className="block mt-5 text-[#FC8608]">
+        <Link to="/login" className="block mt-5 text-secondary">
           Back to Login
         </Link>
         </>
       ) : (
         <div className="text-center">
-          <h2 className="text-5xl text-[#FEFCE1] mb-4">
+          <h2 className="text-5xl text-light mb-4">
             Check your email
           </h2>
-          <p className="text-[#FEFCE1] mb-6">
+          <p className="text-light mb-6">
             We've sent a password reset link to {submittedEmail}.
             Please check your inbox and spam folder.
           </p>
-          <Link to="/login" className="text-[#FC8608]">
+          <Link to="/login" className="text-secondary">
             Back to Login
           </Link>
         </div>

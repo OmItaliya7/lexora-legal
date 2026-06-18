@@ -9,11 +9,11 @@ const AuthLayout = ({ children }) =>{
         <img src={bgImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover"/>
 
         {/* Content */}
-        <div className="relative z-10 max-w-[1440px] mx-auto px-5">
-            <div className="max-w-[1200px] mx-auto">
+        <div className="relative z-10 container-main">
+            <div className="container-content">
                 <Header />
                 {/* Wrapper for spacing */}
-                <div className="flex justify-center py-17.5 md:py-20 xl:pt-22.75 xl:pb-26.25 border-b border-[#FEFCE1]/25">
+                <div className="flex justify-center py-17.5 md:py-20 xl:pt-22.75 xl:pb-26.25 border-b border-light/25">
                     {children}
                 </div>
             </div>

@@ -16,10 +16,10 @@ const services = ["Corporate Law", "Family Law", "Business Law", "Real Estate La
 /* Reusable Input Row */
 const FormField = ({ icon, placeholder, type = "text", textarea, select, name, value, onChange, label, autoComplete}) => {
 
-  const baseClass = "w-full outline-none text-sm font-medium text-[#FEFCE1] placeholder-[#FEFCE1]"
+  const baseClass = "w-full outline-none text-sm font-medium text-light placeholder-[#FEFCE1]"
  
   return (
-    <div className={`flex border-b border-[#FEFCE1]/25 pb-2 ${textarea ? "items-start gap-4" : "items-center gap-2.25"}`}>
+    <div className={`flex border-b border-light/25 pb-2 ${textarea ? "items-start gap-4" : "items-center gap-2.25"}`}>
       <img src={icon} alt="" className="size-5 shrink-0" />
       <label htmlFor={name} className="sr-only">{label}</label>
 
@@ -38,9 +38,9 @@ const FormField = ({ icon, placeholder, type = "text", textarea, select, name, v
         />
       ) : select ? (
         <select id={name} name = {name} value={value} onChange={onChange} autoComplete={autoComplete} className={`${baseClass}`}>
-          <option className="bg-[#0E100F]">{placeholder}</option>
+          <option className="bg-primary">{placeholder}</option>
           {services.map((service, index) => (
-            <option key={index} value={service} className="bg-[#0E100F]">
+            <option key={index} value={service} className="bg-primary">
               {service}
             </option>
           ))}
@@ -116,8 +116,8 @@ const Consultation = () => {
   };
 
   return (
-    <section aria-labelledby="consultation-heading" className="max-w-[1440px] mx-auto px-5">
-      <div className="max-w-[1200px] mx-auto py-17.5 md:py-22.5 lg:py-25 border-b border-[#FEFCE1]/25">
+    <section aria-labelledby="consultation-heading" className="container-main">
+      <div className="container-content py-17.5 md:py-22.5 lg:py-25 border-b border-light/25">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-21.25 items-center ">
 
           {/* LEFT IMAGE */}
@@ -136,11 +136,11 @@ const Consultation = () => {
 
             {/* HEADER */}
             <div className="mb-14 lg:mb-24">
-              <h2 id="consultation-heading" className="mb-4 font-bold text-2xl sm:text-3xl lg:text-[40px] leading-[120%] text-[#FEFCE1]">
+              <h2 id="consultation-heading" className="mb-4 font-bold text-2xl sm:text-3xl lg:text-[40px] leading-[120%] text-light">
                 Request a Free Consultation
               </h2>
 
-              <p className="font-medium text-sm sm:text-base text-[#D8D6BF]">
+              <p className="font-medium text-sm sm:text-base text-gray">
                 Save money by bundling Solar power, Battery Storage, and Roofing and make your home into an energy saving machine!
               </p>
             </div>
@@ -165,14 +165,14 @@ const Consultation = () => {
               <div className="flex flex-col md:flex-row">
 
                 {/* CHECKBOX */}
-                <label htmlFor="terms" className="inline-flex items-start gap-1.25 text-sm text-[#D8D6BF] font-medium">
+                <label htmlFor="terms" className="inline-flex items-start gap-1.25 text-sm text-gray font-medium">
                   <div className="relative mt-0.5">
                     <input
                       id="terms"
                       type="checkbox"
                       checked={agreed}
                       onChange={(e) => setAgreed(e.target.checked)}
-                      className="peer size-4 appearance-none rounded-sm border-[1.5px] border-[#FEFCE1] checked:bg-[#FC8608] checked:border-[#FC8608]"/>
+                      className="peer size-4 appearance-none rounded-sm border-[1.5px] border-light checked:bg-secondary checked:border-secondary"/>
 
                     {agreed && (
                       <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-0 top-0">
@@ -187,8 +187,8 @@ const Consultation = () => {
                 </label>
 
                 {/* BUTTON */}
-                <button disabled={loading} type="submit" className="bg-[#FC8608] px-10 py-4 rounded-full flex items-center justify-center gap-4 text-[#0E100F] font-semibold text-sm hover:opacity-90 transition whitespace-nowrap">
-                  {loading ? "Sending..." : "Send Message"}<ArrowIcon className="text-[#0E100F]" />
+                <button disabled={loading} type="submit" className="bg-secondary px-10 py-4 rounded-full flex items-center justify-center gap-4 text-primary font-semibold text-sm hover:opacity-90 transition whitespace-nowrap">
+                  {loading ? "Sending..." : "Send Message"}<ArrowIcon className="text-primary" />
                 </button>
 
               </div>

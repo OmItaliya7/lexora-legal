@@ -45,4 +45,29 @@ const forgotPasswordLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-module.exports = { loginLimiter, registerLimiter, contactLimiter, forgotPasswordLimiter };
+const resetPasswordLimiter = rateLimit({
+    windowMs:15*60*1000,
+    max:5,
+    message:{
+        success:false,
+        message:"Too many reset attempts"
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+const changePasswordLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+
+    message: {
+        success: false,
+        message:
+        "Too many password change attempts. Please try again later."
+    },
+
+    standardHeaders:true,
+    legacyHeaders:false
+});
+
+module.exports = { loginLimiter, registerLimiter, contactLimiter, forgotPasswordLimiter, resetPasswordLimiter, changePasswordLimiter };

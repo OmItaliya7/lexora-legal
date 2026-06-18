@@ -56,9 +56,9 @@ const ResetPassword = () => {
     />
     <AuthLayout>
 
-      <div className="w-full max-w-[640px] border border-[#FEFCE1] bg-[#0E100F] px-8 py-8 sm:px-12 sm:py-10">
+      <div className="w-full max-w-[640px] border border-light bg-primary px-8 py-8 sm:px-12 sm:py-10">
 
-        <h1 id="reset-password-heading" className="text-2xl sm:text-3xl text-[#FEFCE1] mb-6">
+        <h1 id="reset-password-heading" className="text-2xl sm:text-3xl text-light mb-6">
           Reset Password
         </h1>
         <form aria-labelledby="reset-password-heading" aria-label="Reset password form" onSubmit={handleSubmit}>
@@ -72,10 +72,10 @@ const ResetPassword = () => {
             placeholder="New Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border border-[#403F38] bg-transparent rounded-full px-5 py-4 text-white"
+            className="w-full border border-gray bg-transparent rounded-full px-5 py-4 text-white"
           />
 
-          <button type="submit" disabled={loading} className="w-full mt-6 border border-[#FEFCE1] rounded-full py-4 text-[#FEFCE1]">
+          <button type="submit" disabled={loading} className="w-full mt-6 border border-light rounded-full py-4 text-light">
             {loading ? "Resetting..." : "Reset Password"}
           </button>
         </form>

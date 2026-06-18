@@ -20,19 +20,19 @@ const AboutCard = ({title, heading, description, image, points, imageAlt}) => {
         <div className="w-full max-w-[500px] flex flex-col justify-center gap-5">
           <div className="space-y-8">
             {/* SMALL TITLE */}
-            <h3 className="text-[#FEFCE1] text-[28px] sm:text-[34px] lg:text-[40px] font-semibold leading-[120%]">
+            <h3 className="text-light text-[28px] sm:text-[34px] lg:text-[40px] font-semibold leading-[120%]">
               {title}
             </h3>
 
             {/* HEADING */}
-            <h4 className="text-[#FEFCE1] text-[28px] sm:text-[34px] lg:text-[40px] font-bold leading-[120%]">
+            <h4 className="text-light text-[28px] sm:text-[34px] lg:text-[40px] font-bold leading-[120%]">
               {heading}
             </h4>
           </div>
           
           <div className="flex flex-col gap-9">
             {/* DESCRIPTION */}
-            <p className="text-[#D8D6BF]/60 text-sm 2xl:text-base font-medium">
+            <p className="text-gray/60 text-sm 2xl:text-base font-medium">
               {description}
             </p>
 
@@ -40,8 +40,8 @@ const AboutCard = ({title, heading, description, image, points, imageAlt}) => {
             <ul className="space-y-4">
 
               {points.map((point, index) => (
-                <li key={index} className="flex items-center gap-2 text-[#D8D6BF] text-base lg:text-lg">
-                  <img src={checkedArrow} alt="" className="size-5 text-[#FEFCE1] shrink-0" />
+                <li key={index} className="flex items-center gap-2 text-gray text-base lg:text-lg">
+                  <img src={checkedArrow} alt="" className="size-5 text-light shrink-0" />
                   <span>{point}</span>
                 </li>
               ))}

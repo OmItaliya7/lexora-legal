@@ -4,7 +4,7 @@ import { trustedCompanies } from "../data/trustedCompaniesData";
 
 const CompanyPill = ({ logo,name }) => {
   return (
-    <figure className="shrink-0 whitespace-nowrap bg-[#FEFCE1]/15 rounded-full px-8 py-4 lg:px-14 lg:py-6 flex items-center justify-center">
+    <figure className="shrink-0 whitespace-nowrap bg-light/15 rounded-full px-8 py-4 lg:px-14 lg:py-6 flex items-center justify-center">
       <img src={logo} alt={`${name} logo`} loading="lazy" className="h-2.5 sm:h-3 lg:h-4 w-auto object-contain" />
     </figure>
   );
@@ -25,11 +25,11 @@ const TrustedCompaniesSection = () => {
         {/* TOP CONTENT */}
         <div className="mb-8 md:mb-12 lg:mb-15 space-y-4.5 text-center">
 
-          <h2 id="trusted-companies-heading" className="font-bold text-[30px] sm:text-[36px] lg:text-[40px] leading-[120%] text-[#FEFCE1]">
+          <h2 id="trusted-companies-heading" className="font-bold text-[30px] sm:text-[36px] lg:text-[40px] leading-[120%] text-light">
             Trusted Companies
           </h2>
 
-          <p className="max-w-[330px] xl:max-w-[360px] mx-auto font-medium text-sm text-[#D8D6BF]">
+          <p className="max-w-[330px] xl:max-w-[360px] mx-auto font-medium text-sm text-gray">
             <span className="pr-2 font-extralight text-[24px] leading-none">{`{`}</span>
             We’re proud that our law firm offers top-notch legal service for a nationwide affordable price.
             <span className="pl-1 font-extralight text-[24px] align-bottom leading-none">{`}`}</span>

@@ -5,11 +5,11 @@ const PricingItem = ({title,description,highlight,premium,nonMember,compactSpaci
       <div className="w-full lg:max-w-[260px]">
 
         {title && (   
-          <h3 className="mb-4 lg:mb-6 font-semibold text-lg lg:text-2xl text-[#FEFCE1]">
+          <h3 className="mb-4 lg:mb-6 font-semibold text-lg lg:text-2xl text-light">
             {title}
           </h3>
         )}
-        <p className="font-medium text-sm text-[#D8D6BF]">
+        <p className="font-medium text-sm text-gray">
           {highlight && (
             <span className="pr-1 font-extralight text-2xl leading-none">{`{`}</span>
           )}
@@ -26,12 +26,12 @@ const PricingItem = ({title,description,highlight,premium,nonMember,compactSpaci
 
         {/* PREMIUM */}
         <div className="text-center">
-          <p className={`font-semibold text-[28px] lg:text-[32px] leading-normal text-[#FEFCE1] ${premium.note ? "mb-4 lg:mb-6" : ""}`}>
+          <p className={`font-semibold text-[28px] lg:text-[32px] leading-normal text-light ${premium.note ? "mb-4 lg:mb-6" : ""}`}>
             {premium.price}
           </p>
 
           {premium.note && (
-            <p className="text-sm max-w-42.5 text-[#D8D6BF]">
+            <p className="text-sm max-w-42.5 text-gray">
               {premium.note}
             </p>
           )}
@@ -40,12 +40,12 @@ const PricingItem = ({title,description,highlight,premium,nonMember,compactSpaci
         {/* NON MEMBER */}
         <div className="lg:min-w-[178px] text-center">
 
-          <h4 className={`font-semibold text-[28px] lg:text-[32px] leading-normal text-[#FEFCE1] ${nonMember.note ? "mb-4 lg:mb-6" : ""}`}>
+          <h4 className={`font-semibold text-[28px] lg:text-[32px] leading-normal text-light ${nonMember.note ? "mb-4 lg:mb-6" : ""}`}>
             {nonMember.price}
           </h4>
 
           {nonMember.note && (
-            <p className="text-sm text-[#D8D6BF]">
+            <p className="text-sm text-gray">
               {nonMember.note}
             </p>
           )}

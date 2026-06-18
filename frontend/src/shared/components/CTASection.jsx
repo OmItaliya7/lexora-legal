@@ -11,14 +11,14 @@ import React from "react";
 
 const FormField = React.memo(({icon, type="text", label, placeholder, textarea = false, name, value, onChange, autoComplete}) =>{
   return(
-    <div className={`flex py-3 sm:py-4 border-b border-[#FEFCE1]/25 ${textarea ? "resize-y" : ""}`}>
+    <div className={`flex py-3 sm:py-4 border-b border-light/25 ${textarea ? "resize-y" : ""}`}>
       <label htmlFor={name} className="sr-only">
         {label}
       </label>
       {textarea ? (
-        <textarea required aria-required="true" id={name} name={name} value={value} onChange={onChange} rows={3} placeholder={placeholder} autoComplete={autoComplete} className="w-full bg-transparent text-sm lg:text-base text-[#FEFCE1] placeholder:text-[#D8D6BF] outline-none" />
+        <textarea required aria-required="true" id={name} name={name} value={value} onChange={onChange} rows={3} placeholder={placeholder} autoComplete={autoComplete} className="w-full bg-transparent text-sm lg:text-base text-light placeholder:text-gray outline-none" />
       ) : (
-        <input required aria-required="true" id={name} type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} autoComplete={autoComplete} className="w-full bg-transparent text-sm lg:text-base text-[#FEFCE1] placeholder:text-[#D8D6BF] outline-none" />
+        <input required aria-required="true" id={name} type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} autoComplete={autoComplete} className="w-full bg-transparent text-sm lg:text-base text-light placeholder:text-gray outline-none" />
       )}
 
       <img src={icon} alt="" aria-hidden="true" className="size-5 lg:size-6 shrink-0" /> 
@@ -76,11 +76,11 @@ const CTASection = () => {
       {/* ARROW  */}
       <img src={arrow} alt="" loading='lazy' aria-hidden='true' className="pointer-events-none hidden sm:block absolute left-0 bottom-[-18px] 2xl:bottom-[-25px] w-40 lg:w-50 xl:w-auto 2xl:w-75" />
 
-      <div className="max-w-[1440px] mx-auto px-5">
-        <div className="max-w-[1200px] mx-auto py-17.5 md:py-22.5 lg:py-25">
+      <div className="container-main">
+        <div className="container-content py-17.5 md:py-22.5 lg:py-25">
         
           {/* TITLE */}
-          <h2 id="consultation-heading" className="mb-8 sm:mb-12 lg:mb-18 text-center font-bold text-[30px] sm:text-[36px] lg:text-[40px] leading-[120%] text-[#FEFCE1]">
+          <h2 id="consultation-heading" className="mb-8 sm:mb-12 lg:mb-18 text-center font-bold text-[30px] sm:text-[36px] lg:text-[40px] leading-[120%] text-light">
             Request a Free <br /> Legal Consultation
           </h2>
 
@@ -94,8 +94,8 @@ const CTASection = () => {
             <div className="max-w-[480px] lg:max-w-[570px] mx-auto mt-8 ">
               <FormField type="text" label="Message" name="message" value={formData.message} onChange={handleChange} icon={messageIcon} placeholder="Describe Your Legal Matter*" textarea autoComplete="off" />
             </div>
-            <button type="submit" disabled={loading} className="mx-auto mt-10 sm:mt-12 lg:mt-23 flex items-center gap-4 rounded-full bg-[#FC8608] px-10 py-4 font-semibold text-sm md:text-base text-[#0E100F] hover:opacity-90 transition-opacity">
-              {loading ? "Sending..." : "Send Message"} <ArrowIcon className="text-[#0E100F]" />
+            <button type="submit" disabled={loading} className="mx-auto mt-10 sm:mt-12 lg:mt-23 flex items-center gap-4 rounded-full bg-secondary px-10 py-4 font-semibold text-sm md:text-base text-primary hover:opacity-90 transition-opacity">
+              {loading ? "Sending..." : "Send Message"} <ArrowIcon className="text-primary" />
             </button> 
           </form>
         </div>

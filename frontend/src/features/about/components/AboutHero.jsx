@@ -33,8 +33,8 @@ const AboutHero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(304.61deg,rgba(14,16,15,0.95)_42.67%,rgba(14,16,15,0.95)_75%,rgba(14,16,15,0.0665)_103.96%)]" />
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-5">
-        <div className="max-w-[1200px] mx-auto">
+      <div className="relative z-10 container-main">
+        <div className="container-content">
         <Header />
 
         <div className="py-17.5 md:py-22.5 lg:py-25 space-y-15 lg:space-y-25">
@@ -43,22 +43,22 @@ const AboutHero = () => {
 
             {/* LEFT */}
             <div>
-              <p className="mb-4 lg:mb-7 text-[#D1B06B] text-2xl font-semibold">
+              <p className="mb-4 lg:mb-7 text-gold text-2xl font-semibold">
                 Law Firm
               </p>
-              <h1 id="about-page-heading" className="text-[#FEFCE1] text-5xl sm:text-7xl lg:text-[90px] font-bold leading-[120%]">
+              <h1 id="about-page-heading" className="text-light text-5xl sm:text-7xl lg:text-[90px] font-bold leading-[120%]">
                 About Us
               </h1>
             </div>
 
             {/* RIGHT */}
-            <p className="max-w-[310px] text-[#D8D6BF] text-[22px] sm:text-[28px] lg:text-[32px] leading-normal">
+            <p className="max-w-[310px] text-gray text-[22px] sm:text-[28px] lg:text-[32px] leading-normal">
               Your Legal Partners, Ensuring Justice and Peace of Mind
             </p>
 
           </div>
           {/* DIVIDER */}
-          <div className="border-b border-[#FEFCE1]/25" />
+          <div className="border-b border-light/25" />
         </div>
         </div>
 
