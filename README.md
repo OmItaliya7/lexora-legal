@@ -6,7 +6,7 @@ Lexora Legal is a modern and fully responsive law firm website built using the M
 
 Frontend: https://lexora-legall.vercel.app/
 
-Backend API: https://your-backend-url.com
+Backend: https://your-backend-url.com
 
 ---
 
