@@ -11,22 +11,22 @@ import clock from "../../assets/icons/footer/time_f.svg";
 export const socialIcons = [
   {
     image: facebookIcon,
-    link: "#",
+    link: "https://www.facebook.com/people/Enthusia-Softech/61555192523657/",
     alt: "facebook",
   },
   {
     image: instagramIcon,
-    link: "#",
+    link: "https://www.instagram.com/enthusia_softech/",
     alt: "instagram",
   },
   {
     image: twitterIcon,
-    link: "#",
+    link: "https://enthusiasoftech.com/",
     alt: "twitter",
   },
   {
     image: linkedinIcon,
-    link: "#",
+    link: "https://www.linkedin.com/company/enthusia-softech/",
     alt: "linkedin",
   },
 ];
