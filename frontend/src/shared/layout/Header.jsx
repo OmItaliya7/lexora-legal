@@ -18,15 +18,10 @@ const navLinks = [
 const Header = () => {
   const navigate = useNavigate();
 
-  let user = null;
-  try{
-    user = JSON.parse(localStorage.getItem("user"))
-  }
-  catch{
-    user = null;
-  }
+  const user = JSON.parse(localStorage.getItem("user") || "null");
 
-  const username = user?.email?.split("@")[0]?.replace(/^\w/, c => c.toUpperCase());
+  // const username = user?.email?.split("@")[0]?.replace(/^\w/, c => c.toUpperCase());
+  const username = user?.username || user?.email?.split("@")[0] || "User";
 
   const handleLogout = () => {
     localStorage.removeItem("token");

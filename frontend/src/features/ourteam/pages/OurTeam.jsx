@@ -8,7 +8,7 @@ const OurTeam = () =>{
     return(
         <>
             <SEO
-                title="Our Attorneys | Experienced Legal Team"
+                title="Our Attorneys | Lexora Legal"
                 description="Meet our experienced attorneys specializing in business law, family law, civil litigation, financial law, and legal consultation services."
                 keywords="attorneys, legal team, lawyers, business attorney, family lawyer, civil litigation attorney, legal consultation"
                 path="/ourteam"

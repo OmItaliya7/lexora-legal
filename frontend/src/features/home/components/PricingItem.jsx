@@ -38,7 +38,7 @@ const PricingItem = ({title,description,highlight,premium,nonMember,compactSpaci
         </div>
 
         {/* NON MEMBER */}
-        <div className="lg:min-w-[178px] text-center">
+        <div className="lg:w-[178px] text-center">
 
           <h4 className={`font-semibold text-[28px] lg:text-[32px] leading-normal text-light ${nonMember.note ? "mb-4 lg:mb-6" : ""}`}>
             {nonMember.price}

@@ -43,9 +43,9 @@ const ExperienceStatsSection = () => {
               <li key={item.number} className="text-center">
 
                 {/* NUMBER */}
-                <h3 aria-label={`${item.number} ${item.line1} ${item.line2}`} className="mb-4 lg:mb-6 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[120%] text-light">
+                <p aria-label={`${item.number} ${item.line1} ${item.line2}`} className="mb-4 lg:mb-6 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[120%] text-light">
                   {item.number}
-                </h3>
+                </p>
 
                 {/* TEXT */}
                 <p className="mb-4 lg:mb-6 text-sm sm:text-base text-gray">

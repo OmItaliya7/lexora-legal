@@ -10,7 +10,7 @@ const { isValidEmail, isStrongPassword } = require("../utils/validation");
 //registerUser
 const registerUser = asyncHandler(async (req, res) => {
     const email = req.body.email?.trim().toLowerCase();
-    const password = req.body.password?.trim();
+    const password = req.body.password;
 
     if (!email || !password) {
         res.status(400);
@@ -59,7 +59,11 @@ const registerUser = asyncHandler(async (req, res) => {
 //login User
 const loginUser = asyncHandler(async (req, res) => {
     const email = req.body.email?.trim().toLowerCase();
-    const password = req.body.password?.trim();
+    const password = req.body.password;
+    
+    const MAX_ATTEMPTS = 5;
+    const LOCK_TIME = 15 * 60 * 1000;
+    
     // validate input
     if (!email || !password) {
       res.status(400);
@@ -89,6 +93,13 @@ const loginUser = asyncHandler(async (req, res) => {
       throw new Error("This account already uses Google Sign-In. Please continue with Google.");
     }
 
+    //lock opened after the time gone
+    if(user.lockUntil && user.lockUntil <= Date.now()){
+      await User.updateOne({_id: user._id},{$set: {loginAttempts: 0,lockUntil: null,},});
+      user.loginAttempts = 0;
+      user.lockUntil = null;
+    }
+
     //Check if account is locked
     if (user.lockUntil && user.lockUntil > Date.now()) {
       const remainingMinutes = Math.ceil(
@@ -103,23 +114,38 @@ const loginUser = asyncHandler(async (req, res) => {
     const isMatch = await bcrypt.compare(password,user.password);
 
     if (!isMatch) {
-      user.loginAttempts += 1;
-      // Lock account after 5 failed attempts
-      if (user.loginAttempts === 5) {
-        user.lockUntil = Date.now() +  10 * 60 * 1000; //10 min
-        await user.save();
+      const updatedUser = await User.findByIdAndUpdate(
+        user._id,
+        { $inc: { loginAttempts: 1 } },
+        { new: true },
+      );
+
+      if (updatedUser.loginAttempts >= MAX_ATTEMPTS && !updatedUser.lockUntil) {
+        await User.updateOne({_id: user._id}, {$set: { lockUntil: Date.now() + LOCK_TIME },});
+
         res.status(401);
-        throw new Error("Too many failed login attempts. Account locked for 10 minutes.");
+
+        throw new Error(
+          "Too many failed login attempts. Account locked for 15 minutes.",
+        );
       }
-      await user.save();
+
       res.status(401);
+
       throw new Error("Invalid Email or Password");
     }
 
     // Reset login attempts after successful login
-    user.loginAttempts = 0;
-    user.lockUntil = null;
-    await user.save();
+    await User.updateOne(
+      {_id: user._id},
+
+      {
+        $set: {
+          loginAttempts: 0,
+          lockUntil: null,
+        },
+      },
+    );
 
     // Generate token
     const token = generateToken(user._id);
@@ -201,10 +227,12 @@ const forgotPassword = asyncHandler(async (req, res) => {
       message: "If an account exists, a password reset email has been sent."
     });
   }
-
-  if(user.provider === "google"){
-    res.status(400);
-    throw new Error("This account is registered with Google Sign-In. Please continue with Google.");
+  if (user.provider === "google") {
+    return res.status(200).json({
+      success: true,
+      message:
+        "If an account exists, a password reset email has been sent."
+    });
   }
 
   const resetToken = crypto.randomBytes(32).toString("hex");
@@ -249,23 +277,26 @@ const forgotPassword = asyncHandler(async (req, res) => {
       `
     );
   } catch (error) {
+    console.error("Reset email failed:", error.message);
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
     await user.save();
-    res.status(500);
-    throw new Error("Failed to send reset email");
+    return res.status(200).json({
+      success: true,
+      message: "If an account exists, a password reset email has been sent."
+    });
   }
 
   res.status(200).json({
     success: true,
-    message: "Password reset email sent successfully",
+    message: "If an account exists, a password reset email has been sent.",
   });
 });
 
 
 //reset password
 const resetPassword = asyncHandler(async (req, res) => {
-  const  password  = req.body.password?.trim();
+  const  password  = req.body.password;
 
   if (!password) {
     res.status(400);
@@ -307,9 +338,9 @@ const resetPassword = asyncHandler(async (req, res) => {
 // change password
 const changePassword = asyncHandler(async (req, res) => {
 
-  const currentPassword = req.body.currentPassword?.trim();
-  const newPassword = req.body.newPassword?.trim();
-  const confirmPassword = req.body.confirmPassword?.trim();
+  const currentPassword = req.body.currentPassword;
+  const newPassword = req.body.newPassword;
+  const confirmPassword = req.body.confirmPassword;
 
   if (!currentPassword || !newPassword || !confirmPassword) {
     res.status(400);
@@ -333,6 +364,16 @@ if (currentPassword === newPassword) {
 
 const user = await User.findById(req.user._id).select("+password");
 
+if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+}
+
+if(user.provider === "google"){
+    res.status(400);
+    throw new Error("This account is registered with Google Sign-In. Please continue with Google.");
+}
+
 const isMatch = await bcrypt.compare(currentPassword, user.password);
 
 if (!isMatch) {
@@ -340,10 +381,6 @@ if (!isMatch) {
     throw new Error("Current password is incorrect");
 }
 
-if(user.provider === "google"){
-    res.status(400);
-    throw new Error("This account is registered with Google Sign-In. Please continue with Google.");
-}
 
 const salt = await bcrypt.genSalt(10);
 

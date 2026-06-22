@@ -19,6 +19,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({email: "",password: "",confirmPassword: "",});
   const [loading, setLoading] = useState(false);
+  const [agreed,setAgreed]=useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -67,6 +68,10 @@ const handleSubmit = async (e) => {
             toast.error("Passwords do not match")
             return;
         }
+        if(!agreed){
+          toast.error("Please agree to the terms and conditions")
+          return;
+        }
         setLoading(true);
         await registerUser({ email, password });
 
@@ -109,8 +114,10 @@ const handleSubmit = async (e) => {
           { label: "Password", type: "password", name: "password", value: formData.password, onChange: handleChange, autoComplete: "new-password" },
           { label: "Confirm Password", type: "password", name: "confirmPassword", value: formData.confirmPassword, onChange: handleChange, autoComplete: "new-password" },
         ]}
-
+      
         showCheckbox
+        agreed={agreed}
+        setAgreed={setAgreed}
       />
     </AuthLayout>
     </>

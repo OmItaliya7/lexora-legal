@@ -52,7 +52,7 @@ export const attorneysData = [
       "David Lee is an accomplished civil litigation & insurance attorney with extensive experience representing individuals and organizations in complex legal disputes. He focuses on delivering strong courtroom advocacy, strategic settlements, and practical legal guidance tailored to each client’s unique situation and long-term objectives.",
     expertise: [
       "Civil Litigation",
-      "Insurance Defence",
+      "Insurance Defense",
     ],
   },
 

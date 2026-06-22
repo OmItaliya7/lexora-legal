@@ -6,9 +6,9 @@ import hidePasswordIcon from "../../assets/icons/password-visibility/hidePasswor
 
 const SocialButton = ({ icon, text, alt, onClick }) => {
   return (
-    <button type="button" onClick={onClick} className="flex items-center justify-center gap-1 lg:gap-4 w-full py-5 bg-[#FEFCE1] border border-[#333333] rounded-full">
+    <button type="button" onClick={onClick} className="flex items-center justify-center gap-1 lg:gap-4 w-full py-5 bg-light border border-[#333333] rounded-full">
       <img src={icon} alt={alt} className="size-4 sm:size-6" />
-      <p className="text-base lg:text-xl text-[#0E100F] ">{text}</p>
+      <p className="text-base lg:text-xl text-primary ">{text}</p>
     </button>
   )
 }
@@ -18,13 +18,13 @@ const InputField = ({ label , type = "text", name, value, onChange, autoComplete
   const isPasswordField = type === "password";
   return (
     <div className="text-left">  
-        <label htmlFor={name} className="text-xs lg:text-base block pb-2 text-[#D8D6BF]">
+        <label htmlFor={name} className="text-xs lg:text-base block pb-2 text-gray">
           {label}
         </label>
         <div className="relative">
-         <input type={isPasswordField ? showPassword ? "text" : "password" : type} name={name} id={name} onChange={onChange} autoComplete={autoComplete} required aria-required="true" value={value} className="w-full bg-transparent border border-[#403F38] rounded-full px-4 sm:px-5 py-3 lg:py-4 text-white focus:border-white transition"/>
+         <input type={isPasswordField ? showPassword ? "text" : "password" : type} name={name} id={name} onChange={onChange} autoComplete={autoComplete} required aria-required="true" value={value} className="w-full bg-transparent border border-dark-gray rounded-full px-4 sm:px-5 py-3 lg:py-4 text-white focus:border-white transition"/>
          {isPasswordField && (
-          <button type="button" aria-label={showPassword ? "Hide password" : "Show password"} onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2  text-[#D8D6BF] text-xl">
+          <button type="button" aria-label={showPassword ? "Hide password" : "Show password"} onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2  text-gray text-xl">
             <img src={showPassword ? showPasswordIcon : hidePasswordIcon} alt="Eye icon" />
           </button>
          )}
@@ -46,6 +46,8 @@ const AuthCard = ({
   loading,
   googleLogin,
   additionalContent,
+  agreed,
+  setAgreed,
 }) => {
   return (
     <div className="w-full max-w-[670px] border border-light bg-primary px-8 py-6 sm:px-12 sm:py-7.5 lg:pl-16 lg:pr-20 text-center relative">
@@ -115,7 +117,7 @@ const AuthCard = ({
             {showCheckbox && (
             <label className="flex items-start gap-3 cursor-pointer">
               <div className="relative">
-                <input type="checkbox" className="peer mt-[2px] size-4.5 appearance-none rounded-[2px] border-[1.5px] border-light checked:bg-secondary checked:border-secondary"/>
+                <input checked={agreed} onChange={(e)=> {setAgreed(e.target.checked)}} type="checkbox" className="peer mt-[2px] size-4.5 appearance-none rounded-[2px] border-[1.5px] border-light checked:bg-secondary checked:border-secondary"/>
                 <span className="pointer-events-none absolute inset-0 hidden items-center justify-center text-primary text-xs font-bold peer-checked:flex">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-0.2 top-0">
                         <path d="M4.16699 12.0833C4.16699 12.0833 5.41699 12.0833 7.08366 14.9999C7.08366 14.9999 11.716 7.36103 15.8337 5.83325" stroke="#0E100F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

@@ -1,6 +1,6 @@
 require("dotenv").config();
 const connectDB = require("./config/db");
-const rateLimit = require("express-rate-limit");
+const { globalLimiter } = require("./middleware/rateLimitMiddleware");
 
 const express = require("express");
 const cors = require("cors");
@@ -14,22 +14,6 @@ const swaggerSpec = require("./docs/swagger");
 const swaggerUi = require("swagger-ui-express");
 
 const app = express();
-
-const globalLimiter = rateLimit({
-
-windowMs:15*60*1000,
-
-max:300,
-
-message:{
-success:false,
-message:"Too many requests"
-},
-
-standardHeaders:true,
-legacyHeaders:false
-
-});
 
 app.use(globalLimiter);
 
@@ -63,11 +47,13 @@ app.get("/", (req, res) => {
   res.send("Lexora Legal Backend Running");
 });
 
+if(process.env.NODE_ENV !== "production"){
+  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+}
+
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 8080;
-
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 const startServer = async () => {
   try{

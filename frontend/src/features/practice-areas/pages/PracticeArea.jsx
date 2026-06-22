@@ -22,9 +22,9 @@ const PracticeArea = () =>{
     return(
         <>
             <SEO
-                title={`${practice.title} Services | Dotch Law Firm`}
+                title={`${practice.title} Services | Lexora Legal`}
                 description={practice.mainDescription}
-                keywords={`${practice.title}, legal services, attorney, law firm, legal consultation`}
+                keywords={`${practice.title}, ${practice.title} attorney, ${practice.title} lawyer, legal consultation`}
                 path={`/practicearea/${practice.slug}`}
             />
             <main>

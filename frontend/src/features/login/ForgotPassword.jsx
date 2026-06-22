@@ -30,7 +30,7 @@ const ForgotPassword = () => {
       setSubmittedEmail(trimmedEmail);
       setEmail("");
       setEmailSent(true);
-      toast.success("Password reset email sent. Please check your inbox");
+      toast.success("If an account exists, a password reset email has been sent.");
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong");
     } finally {

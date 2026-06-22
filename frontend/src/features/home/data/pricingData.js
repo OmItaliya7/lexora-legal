@@ -89,9 +89,6 @@ export const pricingData = [
     {
       description:
         "Affordable registered agent service",
-
-        
-
         
       highlight: false,
       premium: {

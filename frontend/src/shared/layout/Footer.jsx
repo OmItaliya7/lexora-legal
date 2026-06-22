@@ -61,7 +61,7 @@ const Footer = () => {
             <ul className="space-y-4 md:space-y-6">
               {officeInfo.map((info, i) => (
                 <li key={i} className="flex gap-4">
-                  <img src={info.icon} alt={info.text} className="size-5 lg:size-6 shrink-0" />
+                  <img src={info.icon} aria-hidden="true" className="size-5 lg:size-6 shrink-0" />
                   <span className="text-sm text-gray font-medium whitespace-pre-line">
                     {info.text}
                   </span>
@@ -84,10 +84,10 @@ const Footer = () => {
             <div className="flex py-4 items-center justify-between border-b border-light/40">
               <label htmlFor="newsletter-email" className="sr-only">Email Address</label>
               <input id="newsletter-email" type="email" placeholder="Your Email*" autoComplete="email" className="w-full bg-transparent outline-none text-sm lg:text-base font-medium text-gray placeholder-gray"/>
-              <img src={mail} alt="mail" className="size-4 xl:size-6"/>
+              <img src={mail} alt="" aria-hidden="true" className="size-4 xl:size-6"/>
             </div>
             
-            <button type="submit" className="mt-6 inline-flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 bg-secondary text-sm lg:text-base text-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 rounded-full font-semibold hover:opacity-90 transition">
+            <button type="button" className="mt-6 inline-flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 bg-secondary text-sm lg:text-base text-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 rounded-full font-semibold hover:opacity-90 transition">
               Subscribe Now <ArrowIcon className="text-primary" />
             </button>
           

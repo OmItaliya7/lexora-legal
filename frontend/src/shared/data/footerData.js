@@ -11,22 +11,22 @@ import clock from "../../assets/icons/footer/time_f.svg";
 export const socialIcons = [
   {
     image: facebookIcon,
-    link: "https://facebook.com",
+    link: "#",
     alt: "facebook",
   },
   {
     image: instagramIcon,
-    link: "https://instagram.com",
+    link: "#",
     alt: "instagram",
   },
   {
     image: twitterIcon,
-    link: "https://twitter.com",
+    link: "#",
     alt: "twitter",
   },
   {
     image: linkedinIcon,
-    link: "https://linkedin.com",
+    link: "#",
     alt: "linkedin",
   },
 ];

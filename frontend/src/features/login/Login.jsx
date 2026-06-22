@@ -47,7 +47,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const email = formData.email.trim();
+    const email = formData.email.trim().toLowerCase();
     const password = formData.password.trim();
 
     if (!email || !password) {

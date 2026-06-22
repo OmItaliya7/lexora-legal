@@ -54,9 +54,9 @@ const PracticeAreaOverview = ({practice, attorney}) => {
               </div>
 
               <div className="space-y-1.25">
-                <h4 className="font-medium text-base sm:text-lg text-light">
+                <p className="font-medium text-base sm:text-lg text-light">
                   {attorney.name}
-                </h4>
+                </p>
                 <p className="text-xs text-gray">
                   {practice.title}
                 </p>

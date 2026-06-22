@@ -51,7 +51,7 @@ const ResetPassword = () => {
     <SEO
     title="Reset Password | Lexora Legal"
     description="Reset your account password securely and regain access to your legal consultation account."
-    path="/"
+    path="/reset-password"
     noIndex={true}
     />
     <AuthLayout>

@@ -16,7 +16,7 @@ const Home = () => {
       <SEO 
         title="Lexora Legal | Trusted Legal Services & Attorneys"
         description="Trusted attorneys providing business law, family law, criminal defense, legal consultation, and corporate legal services. Helping individuals and businesses achieve successful legal outcomes."
-        keywords="law firm, attorney, lawyer, legal services, business law, family law, criminal defense, legal consultation"
+        keywords="law firm, attorney, lawyer, legal services, business law, family law, civil litigation, legal consultation, legal representation"
         path="/"
       />
       <main>

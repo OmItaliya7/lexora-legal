@@ -5,7 +5,7 @@ import React from "react";
 const PracticeCard = ({ icon, title, desc, slug}) => {
   const Icon = icon;
   return (
-    <article className="group flex flex-col items-start justify-between p-6 sm:p-7 lg:p-8 gap-4 border border-light/60 hover:bg-light transition-color duration-300">
+    <article className="group flex flex-col items-start justify-between p-6 sm:p-7 lg:p-8 gap-4 border border-light/60 hover:bg-light transition-colors duration-300">
       {/* ICON */}
       <div className="flex items-center justify-center w-14 h-14 mb-2 rounded-full bg-tertiary group-hover:bg-[#0E100F26] transition-all duration-200">
         <Icon aria-hidden="true" className="practice-icon size-8" />

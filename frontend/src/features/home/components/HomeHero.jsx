@@ -8,7 +8,7 @@ const HomeHero = () => {
     <section className="relative overflow-hidden">
       {/*  Hammer Image */}
       <div className="absolute top-16 -right-30 sm:-right-37.5 md:-right-47.5 xl:right-0 xl:left-[50%] w-95 sm:w-130 md:w-162.5 lg:w-195 xl:w-220 2xl:w-242 z-10 pointer-events-none mix-blend-screen select-none">
-        <img src={hammer} alt="Law firm attorney legal services gavel" loading="eager" decoding="async" className="w-full object-contain"/>
+        <img src={hammer} alt="Golden gavel representing professional legal services" loading="eager" decoding="async" className="w-full object-contain"/>
         <div className="absolute inset-0 bg-linear-to-b from-[#000000] via-[#00000017] to-transparent pointer-events-none" />
       </div>
       {/* Header */}
@@ -22,7 +22,7 @@ const HomeHero = () => {
             <h1 className="space-y-5 font-bold text-[55px] sm:text-[80px] md:text-[100px] lg:text-[120px] xl:text-[150px] leading-[120%] text-light">
               <span className="block">Reputation.</span>
               <span className="block text-center">Respect.</span>
-              <span className="block ml-[40%] lg:ml-[55%]">Result.</span>
+              <span className="block text-right pr-[15%] lg:pr-[5%]">Result.</span>
             </h1>
 
             {/* BOTTOM CONTENT */}

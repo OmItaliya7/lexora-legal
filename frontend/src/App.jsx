@@ -6,20 +6,40 @@ import { Suspense } from "react";
 import PageLoader from "./shared/components/PageLoader";
 import { HelmetProvider } from "react-helmet-async";
 
+const toastOptions = {
+  duration: 3000,
+  style: {
+    background: "var(--color-primary)",
+    color: "var(--color-light)",
+    border: "1px solid var(--color-secondary)",
+  },
+  success: {
+    iconTheme: {
+      primary: "#FC8608",
+      secondary: "#FEFCE1",
+    },
+  },
+  error: {
+    iconTheme: {
+      primary: "#ef4444",
+      secondary: "#FEFCE1",
+    },
+  },
+}
+
+const googleClientId=import.meta.env.VITE_GOOGLE_CLIENT_ID
+
 const App = () =>{
   return(
       <HelmetProvider>
-        <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+        
+        <GoogleOAuthProvider clientId={googleClientId}>
           <Suspense fallback={<PageLoader />}>
             <RouterProvider router={router} />
-          </Suspense>
+          </Suspense> 
           
-          <Toaster position="top-right" reverseOrder={false} toastOptions={{ duration: 3000,style: { background: "#0E100F",color: "#FEFCE1",border: "1px solid #FC8608", },
-            success: { iconTheme: { primary: "#FC8608",secondary: "#FEFCE1", },},
-            error: { iconTheme: { primary: "#ef4444",secondary: "#FEFCE1", },},
-          }} 
-          />
-
+          <Toaster position="top-right" reverseOrder={false} toastOptions={toastOptions} />
+          
         </GoogleOAuthProvider>
       </HelmetProvider>
   )
