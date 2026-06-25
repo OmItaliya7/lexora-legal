@@ -11,6 +11,7 @@ const ForgotPassword = () => {
   const [submittedEmail, setSubmittedEmail] = useState("");
   const [emailSent, setEmailSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({})
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,8 +20,17 @@ const ForgotPassword = () => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const trimmedEmail = email.trim().toLowerCase();
 
-      if (!emailRegex.test(trimmedEmail)) {
-        toast.error("Please enter a valid email address");
+      const newErrors = {}
+
+      if(!email){
+        newErrors.email = "Email is required";
+      }
+      else if (!emailRegex.test(trimmedEmail)) {
+        newErrors.email = "Please enter a valid email address";
+      }
+
+      if(Object.keys(newErrors).length > 0){
+        setErrors(newErrors)
         return;
       }
 
@@ -32,7 +42,12 @@ const ForgotPassword = () => {
       setEmailSent(true);
       toast.success("If an account exists, a password reset email has been sent.");
     } catch (error) {
-      toast.error(error.response?.data?.message || "Something went wrong");
+      const message = error.response?.data?.message || "Something went wrong";
+      if(message === "Email not found"){
+        setErrors({ email: message });
+      }else{
+        toast.error(message);
+      }
     } finally {
       setLoading(false);
     }
@@ -61,13 +76,22 @@ const ForgotPassword = () => {
             type="email"
             placeholder="Enter your email address"
             value={email}
-            required
             aria-required="true"
             autoComplete="email"
             disabled={loading}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray bg-transparent rounded-full px-5 py-4 text-white"
+            onChange={(e) => {
+              setEmail(e.target.value); 
+              setErrors((prev) => ({
+                ...prev,
+                email: ""
+              }));
+            }}
+            className={`w-full border bg-transparent rounded-full px-5 py-4 text-white ${errors.email ? "border-red-500" : "border-gray"}`}
           />
+
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+          )}
 
           <button type="submit" disabled={loading} className="w-full mt-6 border border-light rounded-full py-4 text-light">
             {loading ? "Sending..." : "Send Reset Link"}

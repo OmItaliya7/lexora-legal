@@ -13,9 +13,9 @@ const ResetPassword = () => {
   const [loading, setLoading] = useState(false);
 
   if (!token) {
-  navigate("/forgot-password");
-  return null;
-}
+    navigate("/forgot-password");
+    return null;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

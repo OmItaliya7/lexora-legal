@@ -4,16 +4,16 @@ import userIcon from "../../assets/icons/user-icon.svg";
 import showPasswordIcon from "../../assets/icons/password-visibility/showPassword.svg";
 import hidePasswordIcon from "../../assets/icons/password-visibility/hidePassword.svg";
 
-const SocialButton = ({ icon, text, alt, onClick }) => {
+const SocialButton = ({ icon, text, onClick }) => {
   return (
     <button type="button" onClick={onClick} className="flex items-center justify-center gap-1 lg:gap-4 w-full py-5 bg-light border border-[#333333] rounded-full">
-      <img src={icon} alt={alt} className="size-4 sm:size-6" />
-      <p className="text-base lg:text-xl text-primary ">{text}</p>
+      <img src={icon} alt="" aria-hidden="true" className="size-4 sm:size-6" />
+      <span className="text-base lg:text-xl text-primary ">{text}</span>
     </button>
   )
 }
 
-const InputField = ({ label , type = "text", name, value, onChange, autoComplete}) =>{
+const InputField = ({ label , type = "text", name, value, onChange, autoComplete, error}) =>{
   const [showPassword, setShowPassword] = useState(false);
   const isPasswordField = type === "password";
   return (
@@ -22,13 +22,15 @@ const InputField = ({ label , type = "text", name, value, onChange, autoComplete
           {label}
         </label>
         <div className="relative">
-         <input type={isPasswordField ? showPassword ? "text" : "password" : type} name={name} id={name} onChange={onChange} autoComplete={autoComplete} required aria-required="true" value={value} className="w-full bg-transparent border border-dark-gray rounded-full px-4 sm:px-5 py-3 lg:py-4 text-white focus:border-white transition"/>
+         <input type={isPasswordField ? showPassword ? "text" : "password" : type} aria-describedby={error ? `${name}-error` : undefined} name={name} id={name} onChange={onChange} autoComplete={autoComplete} aria-required="true" value={value} className={`w-full bg-transparent border rounded-full px-4 sm:px-5 py-3 lg:py-4 text-white transition ${error ? "border-red-500" : "border-dark-gray focus:border-white"}`}/>
+         
          {isPasswordField && (
           <button type="button" aria-label={showPassword ? "Hide password" : "Show password"} onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2  text-gray text-xl">
             <img src={showPassword ? showPasswordIcon : hidePasswordIcon} alt="Eye icon" />
           </button>
-         )}
-      </div>
+        )}
+        </div>
+        {error && <p id={`${name}-error`} className="text-red-500 text-sm mt-2">{error}</p>}
     </div>
   )
 }
@@ -48,6 +50,7 @@ const AuthCard = ({
   additionalContent,
   agreed,
   setAgreed,
+  errors={}
 }) => {
   return (
     <div className="w-full max-w-[670px] border border-light bg-primary px-8 py-6 sm:px-12 sm:py-7.5 lg:pl-16 lg:pr-20 text-center relative">
@@ -74,14 +77,10 @@ const AuthCard = ({
           <SocialButton
             icon={facebookIcon}
             text="Continue with Facebook"
-            alt=""
-            aria-hidden="true"
           />
           <SocialButton
             icon={googleIcon}
             text="Continue with Google"
-            alt=""
-            aria-hidden="true"
             onClick={googleLogin}
           />
         </div>
@@ -103,7 +102,7 @@ const AuthCard = ({
             </p>
 
             {fields.map((field, index) => (
-              <InputField key={index} {...field} value={field.value} onChange={field.onChange} />
+              <InputField key={index} {...field} value={field.value} error={errors[field.name]} onChange={field.onChange} />
             ))}
             {additionalContent}
           </div>
@@ -131,6 +130,7 @@ const AuthCard = ({
               </span>
             </label>
             )}
+            {showCheckbox && errors.agreed && <p className="text-red-500 text-sm">{errors.agreed}</p>}
           </div>
         </form>
     </div>

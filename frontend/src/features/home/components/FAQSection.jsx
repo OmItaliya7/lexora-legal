@@ -15,7 +15,7 @@ const FAQSection = () => {
   return (
     <section aria-labelledby="faq-heading" className="relative overflow-hidden">
       {/* ARROW */}
-      <img src={arrowDecor} loading="lazy" alt="" aria-hidden="true" className="hidden sm:block absolute -left-5 w-40 xl:w-auto pointer-events-none select-none" />
+      <img src={arrowDecor} loading="lazy" alt=""  aria-hidden="true" className="hidden sm:block absolute -left-5 w-40 xl:w-auto pointer-events-none select-none" />
 
       <div className="container-main ">
         <div className="container-content py-17.5 md:py-22.5 lg:py-25">

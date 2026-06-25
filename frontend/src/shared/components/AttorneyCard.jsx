@@ -15,7 +15,7 @@ const AttorneyCard = ({image, name, role, desc, slug, arrowColor = "text-light"}
     <article onClick={handleCardClick} className={`group relative overflow-hidden border border-light transition-all duration-500 ${active ? "bg-light border-transparent" : "bg-transparent lg:hover:bg-light lg:hover:border-transparent"}`}>
       {/* IMAGE */}
       <div className="w-full max-w-[370px] h-[521px] mx-auto">
-        <img src={image} alt={`${name} - ${role}`} loading="lazy" decoding="async" className="w-full h-full object-cover object-center" />
+        <img src={image} alt={`${name} - ${role}`} loading="lazy" decoding="async" width="370" height="521" className="w-full h-full object-cover object-center" />
       </div>
 
       {/* HOVER OVERLAY */}

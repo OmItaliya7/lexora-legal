@@ -17,7 +17,7 @@ export const pricingData = [
   [
     {
       title: "Attorney services",
-      description: "Access professionally prepared legal documents that can be downloaded, reviewed, and used anytime.",
+      description: "Consult with experienced attorneys for legal advice, professional representation tailored your needs.",
       highlight: true,
       premium: {
         price: "Free",
@@ -56,7 +56,7 @@ export const pricingData = [
 
     {
       description:
-        "Enjoy discounted attorney fees when hiring a licensed legal professional.",
+        "Benefit from reduced legal fees when retaining one of our experienced attorneys.",
         highlight: false,
 
         compactSpacing: true,

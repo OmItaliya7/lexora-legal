@@ -1,7 +1,7 @@
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../../assets/icons/logo.svg";
 import ArrowIcon from "../../shared/icons/ArrowIcon";
 import { jwtDecode } from "jwt-decode";
@@ -31,6 +31,7 @@ const Header = () => {
   }
 
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef(null);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "unset";
@@ -105,7 +106,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" className="lg:hidden text-3xl text-white">
+        <button ref={toggleRef} onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" className="lg:hidden text-3xl text-white">
           {open ? <FiX /> : <FiMenu />}
         </button>
 

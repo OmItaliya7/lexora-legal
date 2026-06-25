@@ -40,7 +40,7 @@ const PracticeAreaOverview = ({practice, attorney}) => {
                 {practice.overview}
               </p>
 
-              <img src={aboutImage} alt={`${practice.title} legal services overview`} loading="lazy" decoding="async" className="w-full max-w-[585px] aspect-[585/292] object-cover pt-2"/>
+              <img src={aboutImage} alt={`${practice.title} legal services overview`} loading="lazy" decoding="async" width={585} height={292} className="w-full max-w-[585px] aspect-[585/292] object-cover pt-2"/>
             </div>
 
           </div>
@@ -50,7 +50,7 @@ const PracticeAreaOverview = ({practice, attorney}) => {
 
             <div className="flex items-center gap-4 pb-5">
               <div className="flex items-center justify-center size-12.5 sm:size-14 lg:size-15.5 border border-light rounded-full overflow-hidden shrink-0">
-                <img src={attorney.image} alt={`${attorney.name} - ${attorney.role}`} loading="lazy" decoding="async" className="w-full h-full object-contain "/>
+                <img src={attorney.image} alt={`${attorney.name} - ${attorney.role}`} loading="lazy" decoding="async" width={62} height={62} className="w-full h-full object-contain "/>
               </div>
 
               <div className="space-y-1.25">
@@ -79,7 +79,7 @@ const PracticeAreaOverview = ({practice, attorney}) => {
             <ul className="py-5 space-y-3 sm:space-y-4">
               {practice.services.map((item, i) => (
                 <li key={i} className="flex items-center gap-1 text-sm text-light font-medium">
-                  <img src={arrowTick} alt="" aria-hidden="true" />
+                  <img src={arrowTick} alt="" aria-hidden="true" width={16} height={16} />
                   {item}
                 </li>
               ))}

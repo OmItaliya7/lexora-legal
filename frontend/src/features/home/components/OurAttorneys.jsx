@@ -10,7 +10,7 @@ const OurAttorneys = ({title = "Our Attorneys",arrowImage = defaultArrow,showBut
   return (
     <section aria-labelledby="attorneys-heading" className="relative border-b border-light/20">
       {/* GOLDEN ARROW */}
-      <img src={arrowImage} alt="" aria-hidden="true" loading="lazy" className={`hidden sm:block absolute ${arrowRightClass} top-4 lg:top-5 w-40 lg:w-55 xl:w-auto pointer-events-none`}/>
+      <img src={arrowImage} alt="" aria-hidden="true" loading="lazy" width={280} height={130} className={`hidden sm:block absolute ${arrowRightClass} top-4 lg:top-5 w-40 lg:w-55 xl:w-auto pointer-events-none`}/>
 
       <div className="container-main">
         <div className="container-content py-17.5 md:py-22.5 lg:py-25">

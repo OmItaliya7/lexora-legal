@@ -28,7 +28,7 @@ const Footer = () => {
             {/* Social Icons FIX */}
             <div className="flex gap-4">
               {socialIcons.map((icon, i) => (
-                <a key={i} aria-label={`Visit our ${icon.name} page`} href={icon.link} target="_blank" rel="noopener noreferrer" className="transition-opacity duration-300 hover:opacity-70">
+                <a key={i} aria-label={`Visit our ${icon.alt} page`} href={icon.link} target="_blank" rel="noopener noreferrer" className="transition-opacity duration-300 hover:opacity-70">
                   <img src={icon.image} alt={icon.alt} aria-hidden="true" className="size-6 object-contain" />
                 </a>
               ))}
@@ -97,7 +97,7 @@ const Footer = () => {
 
         {/* Divider FIX */}
         <p className="py-5 text-center text-gray/80 text-sm">
-          © {new Date().getFullYear()} Law Firm. All rights reserved.
+          © {new Date().getFullYear()} Lexora Legal. All rights reserved.
         </p>
         </div>
     </footer>

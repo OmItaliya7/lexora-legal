@@ -23,7 +23,7 @@ const AttorneyDetails = () => {
       <SEO
         title={`${attorney.name} | ${attorney.role}`}
         description={`Meet ${attorney.name}, an experienced ${attorney.role} at Lexora Legal providing trusted legal consultation and representation.`}
-        keywords={`${attorney.name}, ${attorney.role}, attorney, lawyer, legal consultation`}
+        keywords={`${attorney.name}, ${attorney.role}, ${attorney.expertise.join(", ")}, Lexora Legal, lawyer, attroney`}
         path={`/ourteam/${attorney.slug}`}
       />
       <main>

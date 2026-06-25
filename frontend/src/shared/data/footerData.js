@@ -62,8 +62,8 @@ export const usefulLinks = [
 ];
 
 export const officeInfo = [
-  { icon: phone, text: "+613-1701-2345" },
-  { icon: mail, text: "email@gmail.com" },
+  { icon: phone, text: "+1 (212) 555-0123" },
+  { icon: mail, text: "contact@lexoralegal.com" },
   { icon: location, text: "21 King Street 2100, Australia" },
   { icon: clock, text: "Mon to Fri\n9.00 am to 6.00 pm" },
 ];

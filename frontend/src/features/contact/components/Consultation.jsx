@@ -141,7 +141,7 @@ const Consultation = () => {
               </h2>
 
               <p className="font-medium text-sm sm:text-base text-gray">
-                Save money by bundling Solar power, Battery Storage, and Roofing and make your home into an energy saving machine!
+                Describe your legal matter and one of our experienced attorneys will contact you within 24 hours to discuss your options.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ const Consultation = () => {
             <form aria-label="Free legal consultation request form" onSubmit={handleSubmit} className="w-full max-w-[470px] space-y-8 lg:space-y-9">
 
               {/* GRID INPUTS */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-9">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-9">
 
                 <FormField icon={userIcon} placeholder="First Name*" name = "name" value = {formData.name} onChange = {handleChange} autoComplete = "name"/>
                 <FormField icon={emailIcon} placeholder="Email*" type="email" name = "email" value = {formData.email} onChange = {handleChange} autoComplete = "email"/>

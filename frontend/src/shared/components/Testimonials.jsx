@@ -43,7 +43,7 @@ const Testimonials = () => {
 
   return (
     <section aria-labelledby="testimonials-heading" className="relative overflow-hidden">
-      <img src={arrowDecor} alt="" aria-hidden="true" loading="lazy" className="hidden sm:block absolute left-0 top-[10px] lg:top-[25px] 2xl:top-1 w-40 lg:w-50 2xl:w-62.5 pointer-events-none select-none"/>
+      <img src={arrowDecor} alt="" width={250} height={120} aria-hidden="true" loading="lazy" className="hidden sm:block absolute left-0 top-[10px] lg:top-[25px] 2xl:top-1 w-40 lg:w-50 2xl:w-62.5 pointer-events-none select-none"/>
 
       <div className="container-main">
         <div className="container-content py-17.5 md:py-22.5 lg:py-25">
