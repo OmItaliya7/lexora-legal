@@ -22,10 +22,6 @@ const Signup = () => {
   const [agreed,setAgreed]=useState(false);
   const [errors, setErrors] = useState({});
 
-  // const handleChange = (e) => {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -55,48 +51,6 @@ const Signup = () => {
     },
   });
 
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//     try {
-//       const email = formData.email.trim();
-//       const password = formData.password.trim();
-//       const confirmPassword = formData.confirmPassword.trim();
-//         if (!email || !password || !confirmPassword) {
-//             toast.error("Please fill all fields")
-//             return;
-//         }
-//         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-//         if(!emailRegex.test(email)){
-//             toast.error("Please enter a valid email address");
-//             return;
-//         }
-        
-//         if (!passwordRegex.test(password)) {
-//             toast.error("Password must be at least 8 characters long and contain at least one uppercase, one lowercase and one number.");
-//             return;
-//         }
-        
-//         if (password !== confirmPassword) {
-//             toast.error("Passwords do not match")
-//             return;
-//         }
-//         if(!agreed){
-//           toast.error("Please agree to the terms and conditions")
-//           return;
-//         }
-//         setLoading(true);
-//         await registerUser({ email, password });
-
-//         toast.success("Registration Successful");
-//         navigate("/login");
-//     } catch (error) {
-//         toast.error(error.response?.data?.message || "Something went wrong");
-//     } finally {
-//       setLoading(false);
-//     }
-// };
-
 const handleSubmit = async (e) => {
   e.preventDefault();
     try {
@@ -104,8 +58,6 @@ const handleSubmit = async (e) => {
       const password = formData.password.trim();
       const confirmPassword = formData.confirmPassword.trim();
       const newErrors = {};
-        
-        
         
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;

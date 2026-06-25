@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "../shared/layout/AppLayout";
-
 import {lazy} from "react";
 
 const Home = lazy(() => import("../features/home/pages/Home"));
@@ -11,14 +10,11 @@ const PracticeArea = lazy(() => import("../features/practice-areas/pages/Practic
 const Contact = lazy(() => import("../features/contact/pages/Contact"));
 const Login = lazy(() => import("../features/login/Login"));
 const SignUp = lazy(() => import("../features/signup/SignUp"));
-// const ErrorPage = lazy(() => import("../features/error/ErrorPage"));
 const ForgotPassword = lazy(() => import("../features/login/ForgotPassword"));
 const ResetPassword = lazy(() => import("../features/login/ResetPassword"));
 
 import ErrorPage from "../features/error/ErrorPage"; 
-
 import PublicRoute from "../shared/routes/PublicRoute";
-
 import { Navigate } from "react-router-dom";
 
 export const router = createBrowserRouter([

@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import logo from "../../assets/icons/logo.svg";
+import toast from "react-hot-toast";
 
 import { socialIcons, usefulLinks, officeInfo } from "../data/footerData";
 
 import mail from "../../assets/icons/footer/email_f.svg";
 import ArrowIcon from "../../shared/icons/ArrowIcon";
+
+const handleSubscribe = () =>{
+  toast("Newsletter subscription is coming soon!");
+}
 
 const Footer = () => {
   return (
@@ -16,7 +21,7 @@ const Footer = () => {
 
           {/* Column 1 */}
           <div className="space-y-6">
-            <img src={logo} alt="Law Firm Logo" loading="lazy" className="object-contain" />
+            <img src={logo} alt="Lexora Legal Logo" loading="lazy" className="object-contain" />
 
             {/* Curly braces FIX */}
             <p className="mt-3 text-sm max-w-67.5 text-gray">
@@ -87,7 +92,7 @@ const Footer = () => {
               <img src={mail} alt="" aria-hidden="true" className="size-4 xl:size-6"/>
             </div>
             
-            <button type="button" className="mt-6 inline-flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 bg-secondary text-sm lg:text-base text-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 rounded-full font-semibold hover:opacity-90 transition">
+            <button type="button" onClick={handleSubscribe} className="mt-6 inline-flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 bg-secondary text-sm lg:text-base text-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 rounded-full font-semibold hover:opacity-90 transition">
               Subscribe Now <ArrowIcon className="text-primary" />
             </button>
           

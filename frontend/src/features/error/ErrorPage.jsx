@@ -3,7 +3,7 @@ import ArrowIcon from "../../shared/icons/ArrowIcon";
 import Header from "../../shared/layout/Header";
 import Footer from "../../shared/layout/Footer";
 import bgImage from "../../assets/images/auth/login-bg.webp";
-import error404 from "../../assets/images/error/not-found.png";
+import error404 from "../../assets/images/error/not-found.webp";
 
 const ErrorPage = () => {
   return (

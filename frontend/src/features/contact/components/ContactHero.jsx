@@ -28,7 +28,7 @@ const ContactHero = () => {
   <section aria-labelledby="contact-hero-title" className="relative overflow-hidden">
 
     {/* background  */}
-    <img src={bgImage} alt="" aria-hidden="true" fetchPriority="high" className="absolute w-full h-full object-cover"/>
+    <img src={bgImage} alt="" aria-hidden="true" width="2000" height="1333" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover"/>
     
     {/* OVERLAY */}
     <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(14,16,15,0.81),#0E100F)]" />

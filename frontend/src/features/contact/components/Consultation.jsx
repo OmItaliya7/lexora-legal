@@ -14,53 +14,56 @@ import toast from "react-hot-toast";
 const services = ["Corporate Law", "Family Law", "Business Law", "Real Estate Law", "Criminal Law", "Financial Law",];
 
 /* Reusable Input Row */
-const FormField = ({ icon, placeholder, type = "text", textarea, select, name, value, onChange, label, autoComplete}) => {
+const FormField = ({ icon, placeholder, type = "text", textarea, select, name, value, onChange, label, autoComplete, error}) => {
 
   const baseClass = "w-full outline-none text-sm font-medium text-light placeholder-[#FEFCE1]"
  
   return (
-    <div className={`flex border-b border-light/25 pb-2 ${textarea ? "items-start gap-4" : "items-center gap-2.25"}`}>
-      <img src={icon} alt="" className="size-5 shrink-0" />
-      <label htmlFor={name} className="sr-only">{label}</label>
+    <div>
+      <div className={`flex pb-2 border-b ${textarea ? "items-start gap-4" : "items-center gap-2.25"} ${error ? "border-red-500" : "border-light/25"}`}>
+        <img src={icon} alt="" className="size-5 shrink-0" />
+        <label htmlFor={name} className="sr-only">{label}</label>
 
-      { textarea ? (
-        <textarea
-          id={name}
-          name={name}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          className={`${baseClass} resize-y`}
-          rows={5}
-          autoComplete={autoComplete}
-          required
-          aria-required="true"
-        />
-      ) : select ? (
-        <select id={name} name = {name} value={value} onChange={onChange} autoComplete={autoComplete} className={`${baseClass}`}>
-          <option className="bg-primary">{placeholder}</option>
-          {services.map((service, index) => (
-            <option key={index} value={service} className="bg-primary">
-              {service}
-            </option>
-          ))}
-        </select>
-      ) : (
-        <input
-          id={name}
-          type={type}
-          name={name}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          className={baseClass}
-          autoComplete={autoComplete}
-          required
-          aria-required="true"
-        />
-      )}
+        { textarea ? (
+          <textarea
+            id={name}
+            name={name}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className={`${baseClass} resize-y`}
+            rows={5}
+            autoComplete={autoComplete}
+            aria-required="true"
+          />
+        ) : select ? (
+          <select id={name} name = {name} value={value} onChange={onChange} autoComplete={autoComplete} className={`${baseClass}`}>
+            <option className="bg-primary">{placeholder}</option>
+            {services.map((service, index) => (
+              <option key={index} value={service} className="bg-primary">
+                {service}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <input
+            id={name}
+            type={type}
+            name={name}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className={baseClass}
+            autoComplete={autoComplete}
+            aria-required="true"
+          />
+        )}
+        
+      </div>
+      {error && (<p className="text-red-500 text-sm mt-2">{error}</p>)}
     </div>
   );
+  
 };
 
 const Consultation = () => {
@@ -68,37 +71,63 @@ const Consultation = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: ""});
   const [loading, setLoading] = useState(false);
   const [agreed, setAgreed] = useState(false);
+  const [errors, setErrors] = useState({})
 
-  const handleChange = (e) =>{
-    setFormData({...formData,[e.target.name]: e.target.value})
-  }
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData((prev) => ({...prev, [name]: value}))
+
+    setErrors((prev) => ({...prev, [name]: ""}))
+    
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const newErrors = {}
     const name = formData.name.trim();
     const email = formData.email.trim();
     const phone = formData.phone.trim();
     const message = formData.message.trim();
     try {
-      if(!name || !email || !phone || !message){
-        toast.error("Please fill all the required fields");
-        return;
+      const nameRegex = /^[a-zA-Z\s'-]{2,50}$/;
+      if(!name){
+        newErrors.name = "Name is required";
+      }
+      else if (name.length < 2) {
+        newErrors.name = "Name must be at least 2 characters";
+      }
+      else if (name.length > 50) {
+        newErrors.name = "Name cannot exceed 50 characters";
+      }
+      else if (!nameRegex.test(name)) {
+        newErrors.name ="Enter a valid name";
+      }
+      if(!email){
+        newErrors.email = "Email is required";
+      }
+      if(!phone){
+        newErrors.phone = "Phone is required";
+      }
+      if(!message){
+        newErrors.message = "Message is required";
       }
 
       if(!agreed){
-        toast.error("Please accept the terms and conditions");
-        return;
+        newErrors.agreed = "Please accept the terms and conditions";
       }
 
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!emailRegex.test(formData.email)) {
-        toast.error("Please enter a valid email address");
-        return;
+      if (email && !emailRegex.test(email)) {
+        newErrors.email = "Please enter a valid email address";
       }
 
       const phoneRegex = /^[0-9]{10,15}$/;
-      if (!phoneRegex.test(formData.phone)) {
-        toast.error("Please enter a valid phone number");
+      if (phone && !phoneRegex.test(phone)) {
+        newErrors.phone = "Please enter a valid phone number";
+      }
+
+      if(Object.keys(newErrors).length > 0){
+        setErrors(newErrors)
         return;
       }
 
@@ -107,6 +136,7 @@ const Consultation = () => {
       await submitContactForm(formData);
       toast.success("Form submitted successfully!");
       setFormData({ name: "", email: "", phone: "", service: "", message: "", });
+      setErrors({});
       setAgreed(false);
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong");
@@ -151,19 +181,18 @@ const Consultation = () => {
               {/* GRID INPUTS */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-9">
 
-                <FormField icon={userIcon} placeholder="First Name*" name = "name" value = {formData.name} onChange = {handleChange} autoComplete = "name"/>
-                <FormField icon={emailIcon} placeholder="Email*" type="email" name = "email" value = {formData.email} onChange = {handleChange} autoComplete = "email"/>
-                <FormField icon={phoneIcon} placeholder="Phone Number*" name = "phone" value = {formData.phone} onChange = {handleChange} autoComplete = "tel"/>
-                <FormField icon={serviceIcon} placeholder="Services" select name = "service" value = {formData.service} onChange = {handleChange} autoComplete="off"/>
+                <FormField icon={userIcon} placeholder="First Name*" name = "name" value = {formData.name} onChange = {handleChange} autoComplete = "name" error = {errors.name}/>
+                <FormField icon={emailIcon} placeholder="Email*" type="email" name = "email" value = {formData.email} onChange = {handleChange} autoComplete = "email" error = {errors.email}/>
+                <FormField icon={phoneIcon} placeholder="Phone Number*" name = "phone" value = {formData.phone} onChange = {handleChange} autoComplete = "tel" error = {errors.phone}/>
+                <FormField icon={serviceIcon} placeholder="Services" select name = "service" value = {formData.service} onChange = {handleChange} autoComplete="off" error = {errors.service}/>
 
               </div>
 
               {/* TEXTAREA */}
-              <FormField icon={messageIcon} alt="message" placeholder="Write your message here..." name = "message" value = {formData.message} onChange = {handleChange} textarea />
+              <FormField icon={messageIcon} alt="message" placeholder="Write your message here..." name = "message" value = {formData.message} onChange = {handleChange} textarea error={errors.message} />
 
               {/* BOTTOM */}
               <div className="flex flex-col md:flex-row">
-
                 {/* CHECKBOX */}
                 <label htmlFor="terms" className="inline-flex items-start gap-1.25 text-sm text-gray font-medium">
                   <div className="relative mt-0.5">
@@ -184,6 +213,7 @@ const Consultation = () => {
                   <span>
                     I hereby agree to the Terms & Conditions of our law firm.
                   </span>
+
                 </label>
 
                 {/* BUTTON */}
@@ -192,6 +222,7 @@ const Consultation = () => {
                 </button>
 
               </div>
+              {errors.agreed && <p className="text-red-500 text-sm mt-2">{errors.agreed}</p>}
             </form>
           </div>
         </div>
