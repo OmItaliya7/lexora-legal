@@ -1,8 +1,8 @@
-import person1 from "../../../assets/images/attorneys/john-martin.webp";
-import person2 from "../../../assets/images/attorneys/gems-haward.webp";
-import person3 from "../../../assets/images/attorneys/david-lee.webp";
-import person4 from "../../../assets/images/attorneys/michael-clark.webp";
-import person5 from "../../../assets/images/attorneys/ethan-walker.webp";
+import person1 from "@/assets/images/attorneys/john-martin.webp";
+import person2 from "@/assets/images/attorneys/gems-haward.webp";
+import person3 from "@/assets/images/attorneys/david-lee.webp";
+import person4 from "@/assets/images/attorneys/michael-clark.webp";
+import person5 from "@/assets/images/attorneys/ethan-walker.webp";
 
 export const attorneysData = [
   {

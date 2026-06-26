@@ -1,6 +1,6 @@
-import arrowRight from "../../../assets/decorations/arrow-right.webp";
+import arrowRight from "@/assets/decorations/arrow-right.webp";
 import PricingItem from "./PricingItem";
-import { pricingData } from "../data/pricingData";
+import { pricingData } from "@/features/home/data/pricingData";
 
 const PricingSection = () => {
   return (

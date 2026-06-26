@@ -1,8 +1,8 @@
 import { useState } from "react";
-import SEO from "../../shared/components/SEO";
-import { forgotPassword } from "../../api/authApi";
+import SEO from "@/shared/components/SEO";
+import { forgotPassword } from "@/api/authApi";
 import { Link } from "react-router-dom";
-import AuthLayout from "../../shared/components/AuthLayout";
+import AuthLayout from "@/shared/components/AuthLayout";
 import toast from "react-hot-toast";
 
 const ForgotPassword = () => {

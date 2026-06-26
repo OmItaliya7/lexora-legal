@@ -1,9 +1,9 @@
-import FamilyIcon from "../../../assets/icons/practice/family.svg?react";
-import BusinessIcon from "../../../assets/icons/practice/business.svg?react";
-import CivilIcon from "../../../assets/icons/practice/civil.svg?react";
-import EuroIcon from "../../../assets/icons/practice/euro.svg?react";
-import HomeIcon from "../../../assets/icons/practice/home.svg?react";
-import DollarIcon from "../../../assets/icons/practice/dollar.svg?react";
+import FamilyIcon from "@/assets/icons/practice/family.svg?react";
+import BusinessIcon from "@/assets/icons/practice/business.svg?react";
+import CivilIcon from "@/assets/icons/practice/civil.svg?react";
+import EuroIcon from "@/assets/icons/practice/euro.svg?react";
+import HomeIcon from "@/assets/icons/practice/home.svg?react";
+import DollarIcon from "@/assets/icons/practice/dollar.svg?react";
 
 
 export const practiceAreasData = [

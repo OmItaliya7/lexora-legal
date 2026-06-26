@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
-import faqImage from "../../../assets/images/home/experienced-attorney-rotate.webp";
-import arrowDecor from "../../../assets/decorations/arrow-left.webp";
-import { faqData } from "../data/faqData";
+import faqImage from "@/assets/images/home/experienced-attorney-rotate.webp";
+import arrowDecor from "@/assets/decorations/arrow-left.webp";
+import { faqData } from "@/features/home/data/faqData";
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);

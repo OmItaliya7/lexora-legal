@@ -1,7 +1,7 @@
-import attorneyImage from "../../../assets/images/home/experienced-attorney.webp";
-import curveArrow from "../../../assets/decorations/curve-arrow-left.webp";
+import attorneyImage from "@/assets/images/home/experienced-attorney.webp";
+import curveArrow from "@/assets/decorations/curve-arrow-left.webp";
 import { Link } from 'react-router-dom';
-import ArrowIcon from "../../../shared/icons/ArrowIcon";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 
 const AttorneyExperienced = () => {
   return (

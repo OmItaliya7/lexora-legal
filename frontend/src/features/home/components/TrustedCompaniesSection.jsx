@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import arrowRight from "../../../assets/decorations/our-team-arrow.webp";
-import { trustedCompanies } from "../data/trustedCompaniesData";
+import arrowRight from "@/assets/decorations/our-team-arrow.webp";
+import { trustedCompanies } from "@/features/home/data/trustedCompaniesData";
 
 const CompanyPill = ({ logo,name }) => {
   return (

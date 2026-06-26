@@ -1,6 +1,6 @@
-import AttorneyCard from "../../../shared/components/AttorneyCard";
-import arrowRight from "../../../assets/decorations/our-team-arrow.webp";
-import { attorneysData } from "../data/attorneysData";
+import AttorneyCard from "@/shared/components/AttorneyCard";
+import arrowRight from "@/assets/decorations/our-team-arrow.webp";
+import { attorneysData } from "@/features/ourteam/data/attorneysData";
 
 const attorneyOrder =[1,2,3,4,5,3,3,4,1]
 

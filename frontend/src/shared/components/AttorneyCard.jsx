@@ -1,4 +1,4 @@
-import ArrowIcon from "../../shared/icons/ArrowIcon";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 

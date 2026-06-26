@@ -1,6 +1,6 @@
-import bgImage from "../../../assets/images/our-team/team-hero-bg.webp";
-import teamLawyer from "../../../assets/images/our-team/team-hero-lawyer.webp";
-import Header from "../../../shared/layout/Header";
+import bgImage from "@/assets/images/our-team/team-hero-bg.webp";
+import teamLawyer from "@/assets/images/our-team/team-hero-lawyer.webp";
+import Header from "@/shared/layout/Header";
 
 const TeamHero = () => {
   return (

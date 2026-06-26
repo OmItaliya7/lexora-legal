@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import logo from "../../assets/icons/logo.svg";
+import logo from "@/assets/icons/logo.svg";
 import toast from "react-hot-toast";
 
-import { socialIcons, usefulLinks, officeInfo } from "../data/footerData";
+import { socialIcons, usefulLinks, officeInfo } from "@/shared/data/footerData";
 
-import mail from "../../assets/icons/footer/email_f.svg";
-import ArrowIcon from "../../shared/icons/ArrowIcon";
+import mail from "@/assets/icons/footer/email_f.svg";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 
 const handleSubscribe = () =>{
   toast("Newsletter subscription is coming soon!");

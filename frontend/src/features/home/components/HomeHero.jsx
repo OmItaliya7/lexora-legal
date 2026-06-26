@@ -1,7 +1,7 @@
-import hammer from "../../../assets/images/home/hammer-rotate.webp";
-import Header from "../../../shared/layout/Header";
+import hammer from "@/assets/images/home/hammer-rotate.webp";
+import Header from "@/shared/layout/Header";
 import { Link } from "react-router-dom";
-import ArrowIcon from "../../../shared/icons/ArrowIcon";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 
 const HomeHero = () => {
   return (

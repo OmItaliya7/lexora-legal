@@ -1,4 +1,4 @@
-import quote from "../../assets/icons/testimonials/quote.svg";
+import quote from "@/assets/icons/testimonials/quote.svg";
 import React from "react";
 
 const TestimonialCard = React.memo(({ item, cardRef }) => {

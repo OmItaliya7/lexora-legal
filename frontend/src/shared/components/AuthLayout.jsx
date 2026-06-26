@@ -1,5 +1,5 @@
 import Header from "../layout/Header.jsx"
-import bgImage from "../../assets/images/auth/login-bg.webp"
+import bgImage from "@/assets/images/auth/login-bg.webp"
 
 const AuthLayout = ({ children }) =>{
     return (

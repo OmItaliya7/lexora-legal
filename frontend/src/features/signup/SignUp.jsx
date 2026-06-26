@@ -1,15 +1,15 @@
-import AuthLayout from "../../shared/components/AuthLayout";
-import AuthCard from "../../shared/components/AuthCard";
-import SEO from "../../shared/components/SEO";
+import AuthLayout from "@/shared/components/AuthLayout";
+import AuthCard from "@/shared/components/AuthCard";
+import SEO from "@/shared/components/SEO";
 
-import facebookIcon from "../../assets/icons/social/facebook-black.svg";
-import googleIcon from "../../assets/icons/social/google.svg";
+import facebookIcon from "@/assets/icons/social/facebook-black.svg";
+import googleIcon from "@/assets/icons/social/google.svg";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import { useGoogleLogin } from "@react-oauth/google";
-import { registerUser, googleLogin } from "../../api/authApi";
+import { registerUser, googleLogin } from "@/api/authApi";
 
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";

@@ -1,11 +1,11 @@
 import { useParams, Navigate } from "react-router-dom";
-import { attorneysData } from "../data/attorneysData";
-import AttorneyDetailsHero from "../components/AttorneyDetailsHero";
-import OurAttorneys  from "../../home/components/OurAttorneys";
-import Testimonials from "../../../shared/components/Testimonials";
-import CTASection from "../../../shared/components/CTASection";
-import relatedArrow from "../../../assets/decorations/our-team-arrow.webp";
-import SEO from "../../../shared/components/SEO";
+import { attorneysData } from "@/features/ourteam/data/attorneysData";
+import AttorneyDetailsHero from "@/features/ourteam/components/AttorneyDetailsHero";
+import OurAttorneys  from "@/features/home/components/OurAttorneys";
+import Testimonials from "@/shared/components/Testimonials";
+import CTASection from "@/shared/components/CTASection";
+import relatedArrow from "@/assets/decorations/our-team-arrow.webp";
+import SEO from "@/shared/components/SEO";
 
 const AttorneyDetails = () => {
   const { slug } = useParams();

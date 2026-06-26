@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import heroBg from "../../../assets/images/about/about-hero-bg.webp";
-import about1 from "../../../assets/images/about/about1.webp";
-import about2 from "../../../assets/images/about/about2.webp";
-import about3 from "../../../assets/images/about/about3.webp";
-import Header from "../../../shared/layout/Header";
+import heroBg from "@/assets/images/about/about-hero-bg.webp";
+import about1 from "@/assets/images/about/about1.webp";
+import about2 from "@/assets/images/about/about2.webp";
+import about3 from "@/assets/images/about/about3.webp";
+import Header from "@/shared/layout/Header";
 
 const aboutHeroImages = [
   {

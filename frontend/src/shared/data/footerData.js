@@ -1,11 +1,11 @@
-import facebookIcon from "../../assets/icons/social/facebook.svg";
-import instagramIcon from "../../assets/icons/social/instagram.svg";
-import twitterIcon from "../../assets/icons/social/twitter.svg";
-import linkedinIcon from "../../assets/icons/social/linkedin.svg";
-import phone from "../../assets/icons/footer/phone_f.svg";
-import mail from "../../assets/icons/footer/email_f.svg";
-import location from "../../assets/icons/footer/location_f.svg";
-import clock from "../../assets/icons/footer/time_f.svg";
+import facebookIcon from "@/assets/icons/social/facebook.svg";
+import instagramIcon from "@/assets/icons/social/instagram.svg";
+import twitterIcon from "@/assets/icons/social/twitter.svg";
+import linkedinIcon from "@/assets/icons/social/linkedin.svg";
+import phone from "@/assets/icons/footer/phone_f.svg";
+import mail from "@/assets/icons/footer/email_f.svg";
+import location from "@/assets/icons/footer/location_f.svg";
+import clock from "@/assets/icons/footer/time_f.svg";
 
 /* SOCIAL LINKS */
 export const socialIcons = [

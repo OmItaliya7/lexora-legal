@@ -2,8 +2,8 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useState, useEffect, useRef } from "react";
-import logo from "../../assets/icons/logo.svg";
-import ArrowIcon from "../../shared/icons/ArrowIcon";
+import logo from "@/assets/icons/logo.svg";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 import { jwtDecode } from "jwt-decode";
 import toast from "react-hot-toast";
 

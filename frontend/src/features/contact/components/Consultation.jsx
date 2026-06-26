@@ -1,14 +1,14 @@
-import formImage from "../../../assets/images/contact/contact-form.webp";
-import userIcon from "../../../assets/icons/form/user.svg";
-import emailIcon from "../../../assets/icons/form/email.svg";
-import phoneIcon from "../../../assets/icons/form/phone.svg";
-import serviceIcon from "../../../assets/icons/form/services.svg";
-import messageIcon from "../../../assets/icons/form/message.svg";
+import formImage from "@/assets/images/contact/contact-form.webp";
+import userIcon from "@/assets/icons/form/user.svg";
+import emailIcon from "@/assets/icons/form/email.svg";
+import phoneIcon from "@/assets/icons/form/phone.svg";
+import serviceIcon from "@/assets/icons/form/services.svg";
+import messageIcon from "@/assets/icons/form/message.svg";
 
-import { submitContactForm } from "../../../api/contactApi";
+import { submitContactForm } from "@/api/contactApi";
 
 import { useState } from "react";
-import ArrowIcon from "../../../shared/icons/ArrowIcon";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 import toast from "react-hot-toast";
 
 const services = ["Corporate Law", "Family Law", "Business Law", "Real Estate Law", "Criminal Law", "Financial Law",];

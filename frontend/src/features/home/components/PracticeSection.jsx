@@ -1,6 +1,6 @@
-import PracticeCard from "../../../shared/components/PracticeCard";
-import { practiceAreasData } from "../../practice-areas/data/practiceAreasData";
-import goldenArrow from "../../../assets/decorations/practice-arrow.webp";
+import PracticeCard from "@/shared/components/PracticeCard";
+import { practiceAreasData } from "@/features/practice-areas/data/practiceAreasData";
+import goldenArrow from "@/assets/decorations/practice-arrow.webp";
 
 const PracticeSection = () => {
   return (

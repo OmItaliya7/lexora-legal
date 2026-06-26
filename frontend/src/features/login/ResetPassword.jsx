@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { resetPassword } from "../../api/authApi";
-import AuthLayout from "../../shared/components/AuthLayout";
+import { resetPassword } from "@/api/authApi";
+import AuthLayout from "@/shared/components/AuthLayout";
 import toast from "react-hot-toast";
-import SEO from "../../shared/components/SEO";
+import SEO from "@/shared/components/SEO";
 
 
 const ResetPassword = () => {

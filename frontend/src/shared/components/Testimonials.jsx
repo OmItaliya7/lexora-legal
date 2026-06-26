@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import ArrowLeft from "../../assets/icons/testimonials/left-move.svg?react"
-import ArrowRight from "../../assets/icons/testimonials/right-move.svg?react"
+import ArrowLeft from "@/assets/icons/testimonials/left-move.svg?react"
+import ArrowRight from "@/assets/icons/testimonials/right-move.svg?react"
 import { useState, useRef, useEffect, useCallback } from "react";
 import TestimonialCard from "./TestimonialCard.jsx"
-import {data} from "../../shared/data/testimonialData.js"
-import arrowDecor from "../../assets/decorations/arrow-left.webp";
+import {data} from "@/shared/data/testimonialData.js"
+import arrowDecor from "@/assets/decorations/arrow-left.webp";
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);

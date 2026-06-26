@@ -1,5 +1,5 @@
-import Header from "../../../shared/layout/Header";
-import bgImage from "../../../assets/images/practice/practice-bg.webp"; 
+import Header from "@/shared/layout/Header";
+import bgImage from "@/assets/images/practice/practice-bg.webp"; 
 
 const PracticeHero = ({practice}) => {
   const Icon = practice.icon;

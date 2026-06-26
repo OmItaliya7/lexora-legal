@@ -1,10 +1,10 @@
-import Header from "../../../shared/layout/Header";
-import bgImage from "../../../assets/images/our-team/team-hero-bg.webp";
-import ArrowIcon from "../../../shared/icons/ArrowIcon";
-import facebookIcon from "../../../assets/icons/social/facebook.svg";
-import instagramIcon from "../../../assets/icons/social/instagram.svg";
-import twitterIcon from "../../../assets/icons/social/twitter.svg";
-import linkedinIcon from "../../../assets/icons/social/linkedin.svg";
+import Header from "@/shared/layout/Header";
+import bgImage from "@/assets/images/our-team/team-hero-bg.webp";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
+import facebookIcon from "@/assets/icons/social/facebook.svg";
+import instagramIcon from "@/assets/icons/social/instagram.svg";
+import twitterIcon from "@/assets/icons/social/twitter.svg";
+import linkedinIcon from "@/assets/icons/social/linkedin.svg";
 
 const socialIcons = [
   {

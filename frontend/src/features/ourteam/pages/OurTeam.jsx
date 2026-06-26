@@ -1,8 +1,8 @@
-import TeamHero from "../components/TeamHero";
-import OurAttorneyTeam from "../components/OurAttorneyTeam";
-import Testimonials from "../../../shared/components/Testimonials";
-import CTASection from "../../../shared/components/CTASection";
-import SEO from "../../../shared/components/SEO";
+import TeamHero from "@/features/ourteam/components/TeamHero";
+import OurAttorneyTeam from "@/features/ourteam/components/OurAttorneyTeam";
+import Testimonials from "@/shared/components/Testimonials";
+import CTASection from "@/shared/components/CTASection";
+import SEO from "@/shared/components/SEO";
 
 const OurTeam = () =>{
     return(

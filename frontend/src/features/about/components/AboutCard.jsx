@@ -1,4 +1,4 @@
-import checkedArrow from "../../../assets/images/about/checked-arrow.svg"
+import checkedArrow from "@/assets/images/about/checked-arrow.svg"
 
 const AboutCard = ({title, heading, description, image, points, imageAlt}) => {
   return (

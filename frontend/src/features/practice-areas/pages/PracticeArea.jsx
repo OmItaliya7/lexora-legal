@@ -1,15 +1,15 @@
 import PracticeHero from "../components/PracticeHero";
 import PracticeAreaOverview from "../components/PracticeAreaOverview";
-import OthersPracticeAreas from "../../../shared/components/OthersPracticeAreas";
-import Testimonials from "../../../shared/components/Testimonials";
-import CTASection from "../../../shared/components/CTASection";
-import SEO from "../../../shared/components/SEO";
+import OthersPracticeAreas from "@/shared/components/OthersPracticeAreas";
+import Testimonials from "@/shared/components/Testimonials";
+import CTASection from "@/shared/components/CTASection";
+import SEO from "@/shared/components/SEO";
 
 import { useParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
-import { practiceAreasData } from "../data/practiceAreasData";
-import { attorneysData } from "../../ourteam/data/attorneysData";
+import { practiceAreasData } from "@/features/practice-areas/data/practiceAreasData";
+import { attorneysData } from "@/features/ourteam/data/attorneysData";
 
 const PracticeArea = () =>{
     const { slug } = useParams();

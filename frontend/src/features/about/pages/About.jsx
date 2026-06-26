@@ -1,12 +1,12 @@
-import AboutHero from "../components/AboutHero";
-import TrustedCompaniesSection from "../../home/components/TrustedCompaniesSection";
-import AboutStorySection from "../components/AboutStorySection";
-import OurAttorneys  from "../../home/components/OurAttorneys";
-import relatedArrow from "../../../assets/decorations/our-team-arrow.webp";
-import OthersPracticeAreas from "../../../shared/components/OthersPracticeAreas";
-import CTASection from "../../../shared/components/CTASection";
-import ExperienceStatsSection from "../../../shared/components/ExperienceStatsSection";
-import SEO from "../../../shared/components/SEO";
+import AboutHero from "@/features/about/components/AboutHero";
+import TrustedCompaniesSection from "@/features/home/components/TrustedCompaniesSection";
+import AboutStorySection from "@/features/about/components/AboutStorySection";
+import OurAttorneys  from "@/features/home/components/OurAttorneys";
+import relatedArrow from "@/assets/decorations/our-team-arrow.webp";
+import OthersPracticeAreas from "@/shared/components/OthersPracticeAreas";
+import CTASection from "@/shared/components/CTASection";
+import ExperienceStatsSection from "@/shared/components/ExperienceStatsSection";
+import SEO from "@/shared/components/SEO";
 
 const About = () => {
   return (

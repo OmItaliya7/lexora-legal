@@ -1,9 +1,9 @@
-import profile1 from "../../assets/images/testimonials/profile-1.png";
-import profile2 from "../../assets/images/testimonials/profile-2.png";
-import profile3 from "../../assets/images/testimonials/profile-3.png";
-import logo1 from "../../assets/icons/testimonials/logo-ailitic.svg";
-import logo2 from "../../assets/icons/testimonials/logo-buildwave.svg";
-import logo3 from "../../assets/icons/testimonials/logo-inhive.svg";
+import profile1 from "@/assets/images/testimonials/profile-1.png";
+import profile2 from "@/assets/images/testimonials/profile-2.png";
+import profile3 from "@/assets/images/testimonials/profile-3.png";
+import logo1 from "@/assets/icons/testimonials/logo-ailitic.svg";
+import logo2 from "@/assets/icons/testimonials/logo-buildwave.svg";
+import logo3 from "@/assets/icons/testimonials/logo-inhive.svg";
   
 export const data = [
   { id: 1, profile: profile1, logo: logo1, companyname: "Ailitic", name: "Danis Slavska", role: "CTO, Ailitic", role2:"New York City, USA" , text: "The legal team handled our business contract dispute professionally and achieved an excellent outcome for our company." },

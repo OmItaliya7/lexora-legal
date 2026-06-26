@@ -1,6 +1,6 @@
-import SEO from "../../../shared/components/SEO";
-import ContactHero from "../components/ContactHero.jsx";
-import Consultation from "../components/Consultation.jsx";
+import SEO from "@/shared/components/SEO";
+import ContactHero from "@/features/contact/components/ContactHero.jsx";
+import Consultation from "@/features/contact/components/Consultation.jsx";
 
 const Contact = () => {
   return (

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ArrowIcon from "../icons/ArrowIcon";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 import React from "react";
 
 const PracticeCard = ({ icon, title, desc, slug}) => {

@@ -1,6 +1,6 @@
-import storyImg from "../../../assets/images/about/story.webp";
-import missionImg from "../../../assets/images/about/mission.webp";
-import visionImg from "../../../assets/images/about/vision.webp";
+import storyImg from "@/assets/images/about/story.webp";
+import missionImg from "@/assets/images/about/mission.webp";
+import visionImg from "@/assets/images/about/vision.webp";
 
 export const aboutStoryData = [
   {

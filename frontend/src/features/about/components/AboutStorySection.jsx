@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import AboutCard from "./AboutCard";
-import { aboutStoryData } from "../data/aboutStoryData";
-import ArrowLeft from "../../../assets/icons/testimonials/left-move.svg?react";
-import ArrowRight from "../../../assets/icons/testimonials/right-move.svg?react";
-import arrowDecor from "../../../assets/decorations/about-story-arrow.webp";
+import { aboutStoryData } from "@/features/about/data/aboutStoryData";
+import ArrowLeft from "@/assets/icons/testimonials/left-move.svg?react";
+import ArrowRight from "@/assets/icons/testimonials/right-move.svg?react";
+import arrowDecor from "@/assets/decorations/about-story-arrow.webp";
 
 const AboutStorySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,5 +1,5 @@
-import PracticeCard from "../../shared/components/PracticeCard";
-import { practiceAreasData } from "../../features/practice-areas/data/practiceAreasData";  
+import PracticeCard from "@/shared/components/PracticeCard";
+import { practiceAreasData } from "@/features/practice-areas/data/practiceAreasData";  
 
 const OthersPracticeAreas = () => {
 

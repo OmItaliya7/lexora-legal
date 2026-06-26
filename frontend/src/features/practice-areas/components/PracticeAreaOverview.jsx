@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import aboutImage from "../../../assets/images/practice/practice-about.webp";
-import arrowTick from "../../../assets/ui/right-tick.svg";
-import ArrowIcon from "../../../shared/icons/ArrowIcon";
+import aboutImage from "@/assets/images/practice/practice-about.webp";
+import arrowTick from "@/assets/ui/right-tick.svg";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 import { stats } from "../data/serviceData"
 
 const PracticeAreaOverview = ({practice, attorney}) => {

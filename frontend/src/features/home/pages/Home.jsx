@@ -1,14 +1,14 @@
-import ExperienceStatsSection from "../../../shared/components/ExperienceStatsSection";
-import AttorneyExperience from "../components/AttorneyExperienced";
-import HomeHero from "../components/HomeHero";
-import OurAttorneys from "../components/OurAttorneys";
-import PracticeSection from "../components/PracticeSection";
-import PricingSection from "../components/PricingSection";
-import Testimonials from "../../../shared/components/Testimonials";
+import ExperienceStatsSection from "@/shared/components/ExperienceStatsSection";
+import AttorneyExperience from "@/features/home/components/AttorneyExperienced";
+import HomeHero from "@/features/home/components/HomeHero";
+import OurAttorneys from "@/features/home/components/OurAttorneys";
+import PracticeSection from "@/features/home/components/PracticeSection";
+import PricingSection from "@/features/home/components/PricingSection";
+import Testimonials from "@/shared/components/Testimonials";
 import TrustedCompaniesSection from "../components/TrustedCompaniesSection";
 import FAQSection from "../components/FAQSection";
-import CTASection from "../../../shared/components/CTASection";
-import SEO from "../../../shared/components/SEO";
+import CTASection from "@/shared/components/CTASection";
+import SEO from "@/shared/components/SEO";
 
 const Home = () => {
   return (

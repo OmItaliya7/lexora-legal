@@ -1,9 +1,9 @@
-import location from "../../../assets/icons/contact/location.svg";
-import phone from "../../../assets/icons/contact/phone.svg";
-import email from "../../../assets/icons/contact/email.svg";
+import location from "@/assets/icons/contact/location.svg";
+import phone from "@/assets/icons/contact/phone.svg";
+import email from "@/assets/icons/contact/email.svg";
 
-import bgImage from "../../../assets/images/contact/contact-bg.webp";
-import Header from "../../../shared/layout/Header";
+import bgImage from "@/assets/images/contact/contact-bg.webp";
+import Header from "@/shared/layout/Header";
 
 const contactData = [
   {

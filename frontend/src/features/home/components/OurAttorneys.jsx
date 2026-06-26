@@ -1,8 +1,8 @@
-import AttorneyCard from "../../../shared/components/AttorneyCard";
-import defaultArrow from "../../../assets/decorations/arrow-right.webp";
-import ArrowIcon from "../../../shared/icons/ArrowIcon";
+import AttorneyCard from "@/shared/components/AttorneyCard";
+import defaultArrow from "@/assets/decorations/arrow-right.webp";
+import ArrowIcon from "@/shared/icons/ArrowIcon";
 import { Link } from "react-router-dom";
-import { attorneysData } from "../../ourteam/data/attorneysData";
+import { attorneysData } from "@/features/ourteam/data/attorneysData";
 
 const featuredAttorneys = attorneysData.slice(0, 3);
 
