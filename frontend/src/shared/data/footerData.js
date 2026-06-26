@@ -12,22 +12,22 @@ export const socialIcons = [
   {
     image: facebookIcon,
     link: "https://www.facebook.com/people/Enthusia-Softech/61555192523657/",
-    alt: "facebook",
+    alt: "Facebook",
   },
   {
     image: instagramIcon,
     link: "https://www.instagram.com/enthusia_softech/",
-    alt: "instagram",
+    alt: "Instagram",
   },
   {
     image: twitterIcon,
     link: "https://enthusiasoftech.com/",
-    alt: "twitter",
+    alt: "Twitter",
   },
   {
     image: linkedinIcon,
     link: "https://www.linkedin.com/company/enthusia-softech/",
-    alt: "linkedin",
+    alt: "LinkedIn",
   },
 ];
 
