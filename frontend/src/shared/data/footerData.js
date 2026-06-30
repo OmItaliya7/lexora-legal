@@ -10,21 +10,25 @@ import clock from "@/assets/icons/footer/time_f.svg";
 /* SOCIAL LINKS */
 export const socialIcons = [
   {
+    id: "facebook",
     image: facebookIcon,
     link: "https://www.facebook.com/people/Enthusia-Softech/61555192523657/",
     alt: "Facebook",
   },
   {
+    id: "instagram",
     image: instagramIcon,
     link: "https://www.instagram.com/enthusia_softech/",
     alt: "Instagram",
   },
   {
+    id: "twitter",
     image: twitterIcon,
     link: "https://enthusiasoftech.com/",
     alt: "Twitter",
   },
   {
+    id: "linkedin",
     image: linkedinIcon,
     link: "https://www.linkedin.com/company/enthusia-softech/",
     alt: "LinkedIn",
@@ -35,26 +39,32 @@ export const socialIcons = [
 /* FOOTER LINKS */
 export const usefulLinks = [
   {
+    id: "about",
     name: "About Us",
     path: "/about-us",
   },
   {
+    id: "team",
     name: "Our Team",
     path: "/ourteam",
   },
   {
+    id: "contact",
     name: "Contact Us",
     path: "/contact",
   },
   {
+    id: "business-law",
     name: "Business Law",
     path: "/practicearea/business-law",
   },
   {
+    id: "family-law",
     name: "Family Law",
     path: "/practicearea/family-law",
   },
   {
+    id: "civil-law",
     name: "Civil Law",
     path: "/practicearea/civil-litigation",
   },
@@ -62,8 +72,8 @@ export const usefulLinks = [
 ];
 
 export const officeInfo = [
-  { icon: phone, text: "+1 (212) 555-0123" },
-  { icon: mail, text: "contact@lexoralegal.com" },
-  { icon: location, text: "21 King Street 2100, Australia" },
-  { icon: clock, text: "Mon to Fri\n9.00 am to 6.00 pm" },
+  { id: "phone", icon: phone, text: "+1 (212) 555-0123" },
+  { id: "mail", icon: mail, text: "contact@lexoralegal.com" },
+  { id: "location", icon: location, text: "21 King Street 2100, Australia" },
+  { id: "clock", icon: clock, text: "Mon to Fri\n9.00 am to 6.00 pm" },
 ];

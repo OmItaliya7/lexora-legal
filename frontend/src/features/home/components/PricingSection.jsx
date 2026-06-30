@@ -23,13 +23,13 @@ const PricingSection = () => {
         {/* BUTTONS */}
         <div className="mb-12 lg:mb-15 flex justify-center sm:justify-end gap-4 lg:gap-10">
 
-          <span className="px-5 sm:px-6 lg:px-10 py-3 lg:py-4 rounded-full bg-secondary font-semibold text-sm lg:text-base text-primary">
+          <div role="presentation" aria-hidden="true" className="px-5 sm:px-6 lg:px-10 py-3 lg:py-4 rounded-full bg-secondary font-semibold text-sm lg:text-base text-primary">
             Premium member
-          </span>
+          </div>
 
-          <span className="px-5 sm:px-6 lg:px-10 py-3 lg:py-4 border border-secondary rounded-full bg-transparent font-semibold text-sm lg:text-base text-secondary">
+          <div role="presentation" aria-hidden="true" className="px-5 sm:px-6 lg:px-10 py-3 lg:py-4 border border-secondary rounded-full bg-transparent font-semibold text-sm lg:text-base text-secondary">
             Non-member
-          </span>
+          </div>
 
         </div>
 

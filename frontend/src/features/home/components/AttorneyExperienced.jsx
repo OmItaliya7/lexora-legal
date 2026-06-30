@@ -31,10 +31,10 @@ const AttorneyExperienced = () => {
                 </span>
                 <div className="space-y-4 pl-4 sm:pl-5 lg:pl-6">
                   <p className="font-medium text-sm lg:text-base text-gray/70">
-                    We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
+                    At Lexora Legal, our experienced attorneys provide strategic legal guidance tailored to every client's unique situation. Whether you require assistance with business disputes, family matters, real estate transactions, or criminal defense, our team is committed to delivering practical solutions while protecting your rights with professionalism, integrity, and attention to every detail.
                   </p>
                   <p className="font-medium text-sm lg:text-base leading-[150%] text-gray/70">
-                    That they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
+                    We believe every client deserves clear communication, honest advice, and dedicated representation from start to finish. By combining years of legal experience with a client-focused approach, we help individuals and businesses navigate complex legal challenges with confidence and achieve the best possible outcomes.
                   <span aria-hidden="true" className="align-bottom font-extralight text-[40px] md:text-[48px] text-light pl-1">
                     {'}'}
                   </span>

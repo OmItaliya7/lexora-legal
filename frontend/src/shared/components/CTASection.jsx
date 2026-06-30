@@ -4,9 +4,7 @@ import phoneIcon from "@/assets/icons/form/phone.svg";
 import messageIcon from "@/assets/icons/form/cta-message.svg";
 import arrow from "@/assets/decorations/arrow-CTA.webp";
 import ArrowIcon from "@/shared/icons/ArrowIcon";
-import { useState } from "react";
-import { submitContactForm } from "@/api/contactApi";
-import toast from "react-hot-toast";
+import { useContactForm } from "@/hooks/useContactForm";
 import React from "react";
 
 const FormField = React.memo(({icon, type="text", label, placeholder, textarea = false, name, value, onChange, autoComplete, error}) =>{
@@ -30,72 +28,7 @@ const FormField = React.memo(({icon, type="text", label, placeholder, textarea =
 })
 
 const CTASection = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) =>{
-    const {name, value} = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({...prev, [name]: ""}));
-  }
-
-  const handleSubmit = async (e) =>{
-    e.preventDefault();
-
-    const name = formData.name.trim();
-    const email = formData.email.trim();
-    const phone = formData.phone.trim();
-    const message = formData.message.trim();
-
-    const newErrors = {};
-
-    try{
-      const nameRegex = /^[a-zA-Z\s'-]{2,50}$/;
-      if(!name){
-        newErrors.name = "Name is required";
-      }
-      else if (name.length < 2) {
-        newErrors.name = "Name must be at least 2 characters";
-      }
-      else if (name.length > 50) {
-        newErrors.name = "Name cannot exceed 50 characters";
-      }
-      else if (!nameRegex.test(name)) {
-        newErrors.name ="Enter a valid name";
-      }
-      if (!email) newErrors.email = "Email is required";
-      if (!phone) newErrors.phone = "Phone is required";
-      if (!message) newErrors.message = "Message is required";
-      setErrors(newErrors);
-
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (email && !emailRegex.test(email)) {
-        newErrors.email = "Please enter a valid email address";
-      }
-      const phoneRegex = /^[0-9]{10,15}$/;
-      if (phone && !phoneRegex.test(phone)) {
-        newErrors.phone = "Please enter a valid phone number";
-      }
-
-      if(Object.keys(newErrors).length > 0){
-        setErrors(newErrors)
-        return;
-      }
-
-      setLoading(true);
-      const payload = {name, email, phone, message}
-      await submitContactForm(payload);
-      setErrors({});
-      toast.success("Form submitted successfully");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-
-    }catch (error) {
-      toast.error(error.response?.data?.message || "Failed to send message")
-    } finally {
-      setLoading(false);
-    }
-  }
+  const {formData, handleChange, handleSubmit, loading, errors} = useContactForm({ name: "", email: "", phone: "", message: "" });
 
   return (
     <section aria-labelledby="consultation-heading" className="relative">

@@ -22,18 +22,16 @@ const Footer = () => {
           {/* Column 1 */}
           <div className="space-y-6">
             <img src={logo} alt="Lexora Legal Logo" loading="lazy" className="object-contain" />
-
-            {/* Curly braces FIX */}
             <p className="mt-3 text-sm max-w-67.5 text-gray">
               <span className="font-extralight text-[24px] pr-1 ">{`{`}</span>
                 We’re proud that our law firm offers top-notch legal service for a nationwide affordable price.
               <span className="font-extralight text-[24px] leading-none align-bottom pl-1">{`}`}</span>
             </p>
 
-            {/* Social Icons FIX */}
+            {/* Social Icons  */}
             <div className="flex gap-4">
-              {socialIcons.map((icon, i) => (
-                <a key={i} aria-label={`Visit our ${icon.alt} page`} href={icon.link} target="_blank" rel="noopener noreferrer" className="transition-opacity duration-300 hover:opacity-70">
+              {socialIcons.map((icon) => (
+                <a key={icon.id} aria-label={`Visit our ${icon.alt} page`} href={icon.link} target="_blank" rel="noopener noreferrer" className="transition-opacity duration-300 hover:opacity-70">
                   <img src={icon.image} alt={icon.alt} aria-hidden="true" className="size-6 object-contain" />
                 </a>
               ))}
@@ -47,8 +45,8 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 md:space-y-6">
-              {usefulLinks.map((item, i) => (
-                <li key={i}>
+              {usefulLinks.map((item) => (
+                <li key={item.id}>
                   <Link to={item.path} className="text-sm font-medium text-gray hover:text-white transition-colors duration-300">
                     {item.name}
                   </Link>
@@ -64,8 +62,8 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 md:space-y-6">
-              {officeInfo.map((info, i) => (
-                <li key={i} className="flex gap-4">
+              {officeInfo.map((info) => (
+                <li key={info.id} className="flex gap-4">
                   <img src={info.icon} aria-hidden="true" className="size-5 lg:size-6 shrink-0" />
                   <span className="text-sm text-gray font-medium whitespace-pre-line">
                     {info.text}
@@ -76,7 +74,7 @@ const Footer = () => {
           </div>
 
           {/* Column 4 */}
-          <div className="space-y-6 sm:pt-5 max-w-70">
+          <form onSubmit={(e) => {e.preventDefault(); handleSubscribe();}} className="space-y-6 sm:pt-5 max-w-70">
             <h3 className="text-light font-semibold text-base">
               SUBSCRIBE NOW
             </h3>
@@ -92,11 +90,11 @@ const Footer = () => {
               <img src={mail} alt="" aria-hidden="true" className="size-4 xl:size-6"/>
             </div>
             
-            <button type="button" onClick={handleSubscribe} className="mt-6 inline-flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 bg-secondary text-sm lg:text-base text-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 rounded-full font-semibold hover:opacity-90 transition">
+            <button type="submit" className="mt-6 inline-flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 bg-secondary text-sm lg:text-base text-primary px-6 sm:px-8 lg:px-10 py-3 lg:py-4 rounded-full font-semibold hover:opacity-90 transition">
               Subscribe Now <ArrowIcon className="text-primary" />
             </button>
           
-          </div>
+          </form>
 
         </div>
 

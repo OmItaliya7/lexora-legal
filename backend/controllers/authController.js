@@ -56,109 +56,6 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 
-// //login User
-// const loginUser = asyncHandler(async (req, res) => {
-//     const email = req.body.email?.trim().toLowerCase();
-//     const password = req.body.password;
-    
-//     const MAX_ATTEMPTS = 5;
-//     const LOCK_TIME = 15 * 60 * 1000;
-    
-//     // validate input
-//     if (!email || !password) {
-//       res.status(400);
-//       throw new Error("Please provide all fields");
-//     }
-
-//     if (!isValidEmail(email)) {
-//       res.status(400);
-//       throw new Error("Please enter a valid email address");
-//     }
-
-//     if(email.length > 254){
-//         res.status(400);
-//         throw new Error("Email address is too long");
-//     }
-
-//     // Find user
-//     const user = await User.findOne({ email }).select("+password");
-
-//     if (!user) {
-//       res.status(401);
-//       throw new Error("Invalid email or password");
-//     }
-
-//     if (user.provider === "google") {
-//       res.status(400);
-//       throw new Error("This account already uses Google Sign-In. Please continue with Google.");
-//     }
-
-//     //lock opened after the time gone
-//     if(user.lockUntil && user.lockUntil <= Date.now()){
-//       await User.updateOne({_id: user._id},{$set: {loginAttempts: 0,lockUntil: null,},});
-//       user.loginAttempts = 0;
-//       user.lockUntil = null;
-//     }
-
-//     //Check if account is locked
-//     if (user.lockUntil && user.lockUntil > Date.now()) {
-//       const remainingMinutes = Math.ceil(
-//         (user.lockUntil - Date.now()) / (60 * 1000)
-//       );
-
-//       res.status(401);
-//       throw new Error(`Account locked. Try again in ${remainingMinutes} minute(s).`);
-//     }
-
-//     // Compare password
-//     const isMatch = await bcrypt.compare(password,user.password);
-
-//     if (!isMatch) {
-//       const updatedUser = await User.findByIdAndUpdate(
-//         user._id,
-//         { $inc: { loginAttempts: 1 } },
-//         { new: true },
-//       );
-
-//       if (updatedUser.loginAttempts >= MAX_ATTEMPTS && !updatedUser.lockUntil) {
-//         await User.updateOne({_id: user._id}, {$set: { lockUntil: Date.now() + LOCK_TIME },});
-
-//         res.status(401);
-
-//         throw new Error(
-//           "Too many failed login attempts. Account locked for 15 minutes.",
-//         );
-//       }
-
-//       res.status(401);
-
-//       throw new Error("Invalid Email or Password");
-//     }
-
-//     // Reset login attempts after successful login
-//     await User.updateOne(
-//       {_id: user._id},
-
-//       {
-//         $set: {
-//           loginAttempts: 0,
-//           lockUntil: null,
-//         },
-//       },
-//     );
-
-//     // Generate token
-//     const token = generateToken(user._id);
-
-//     res.status(200).json({
-//         success: true,
-//         token,
-//         user: {id: user._id, email: user.email}
-//     });
-// });
-
-
-
 //login User
 const loginUser = asyncHandler(async (req, res) => {
     const email = req.body.email?.trim().toLowerCase();
@@ -217,21 +114,17 @@ const loginUser = asyncHandler(async (req, res) => {
     const isMatch = await bcrypt.compare(password,user.password);
 
     if (!isMatch) {
-      const updatedUser = await User.findOneAndUpdate(
+      const updatedUser = await User.findByIdAndUpdate(
+        user._id,
         {
-          _id: user._id,
-          lockUntil: { $lt: Date.now() }
+          $inc: { loginAttempts: 1 }
         },
         {
-          $inc: { loginAttempts: 1 },
-          $set: {
-            lockUntil: Date.now() + LOCK_TIME,
-          },
+          new: true
         },
-        { new: true }
       );
 
-      if (updatedUser.loginAttempts >= MAX_ATTEMPTS) {
+      if (updatedUser.loginAttempts >= MAX_ATTEMPTS && !updatedUser.lockUntil) {
         const lockedUser = await User.findOneAndUpdate(
           {_id: user._id,lockUntil: null},
           {

@@ -91,10 +91,11 @@ const AttorneyDetailsHero = ({ attorney }) => {
                 <div className="flex gap-4 sm:gap-5">
 
                   {socialIcons.map((item, i) => (
-                    <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="transition-opacity duration-300 hover:opacity-70">
+                    <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${attorney.name} on ${item.alt}`} className="transition-opacity duration-300 hover:opacity-70">
                       <img
                         src={item.icon}
-                        alt={item.alt}
+                        alt=""
+                        aria-hidden="true"
                         className="object-contain"
                       />
                     </a>

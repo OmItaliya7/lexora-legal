@@ -1,14 +1,14 @@
-import hammer from "@/assets/images/home/hammer-rotate.webp";
+import hammer from "@/assets/images/home/hammer.webp";
 import Header from "@/shared/layout/Header";
 import { Link } from "react-router-dom";
 import ArrowIcon from "@/shared/icons/ArrowIcon";
 
 const HomeHero = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative isolate overflow-hidden">
       {/*  Hammer Image */}
       <div className="absolute top-16 -right-30 sm:-right-37.5 md:-right-47.5 xl:right-0 xl:left-[50%] w-95 sm:w-130 md:w-162.5 lg:w-195 xl:w-220 2xl:w-242 z-10 pointer-events-none mix-blend-screen select-none">
-        <img src={hammer} alt="Golden gavel representing professional legal services" loading="eager" decoding="async" className="w-full object-contain"/>
+        <img src={hammer} alt="Golden gavel representing professional legal services" loading="eager" fetchPriority="high" decoding="async" width={968} height={968} className="w-full object-contain"/>
         <div className="absolute inset-0 bg-linear-to-b from-[#000000] via-[#00000017] to-transparent pointer-events-none" />
       </div>
       {/* Header */}

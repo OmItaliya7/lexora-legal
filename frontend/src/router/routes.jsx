@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "practicearea",
-        element: <Navigate to="/practicearea/business-law" />,
+        element: <Navigate to="/practicearea/business-law" replace />,
       },
       {
         path: "practicearea/:slug",

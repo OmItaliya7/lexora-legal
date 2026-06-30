@@ -4,12 +4,8 @@ import emailIcon from "@/assets/icons/form/email.svg";
 import phoneIcon from "@/assets/icons/form/phone.svg";
 import serviceIcon from "@/assets/icons/form/services.svg";
 import messageIcon from "@/assets/icons/form/message.svg";
-
-import { submitContactForm } from "@/api/contactApi";
-
-import { useState } from "react";
+import { useContactForm } from "@/hooks/useContactForm";
 import ArrowIcon from "@/shared/icons/ArrowIcon";
-import toast from "react-hot-toast";
 
 const services = ["Corporate Law", "Family Law", "Business Law", "Real Estate Law", "Criminal Law", "Financial Law",];
 
@@ -68,82 +64,15 @@ const FormField = ({ icon, placeholder, type = "text", textarea, select, name, v
 
 const Consultation = () => {
 
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: ""});
-  const [loading, setLoading] = useState(false);
-  const [agreed, setAgreed] = useState(false);
-  const [errors, setErrors] = useState({})
-
-  const handleChange = (e) => {
-    const {name, value} = e.target;
-    setFormData((prev) => ({...prev, [name]: value}))
-
-    setErrors((prev) => ({...prev, [name]: ""}))
-    
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newErrors = {}
-    const name = formData.name.trim();
-    const email = formData.email.trim();
-    const phone = formData.phone.trim();
-    const message = formData.message.trim();
-    try {
-      const nameRegex = /^[a-zA-Z\s'-]{2,50}$/;
-      if(!name){
-        newErrors.name = "Name is required";
-      }
-      else if (name.length < 2) {
-        newErrors.name = "Name must be at least 2 characters";
-      }
-      else if (name.length > 50) {
-        newErrors.name = "Name cannot exceed 50 characters";
-      }
-      else if (!nameRegex.test(name)) {
-        newErrors.name ="Enter a valid name";
-      }
-      if(!email){
-        newErrors.email = "Email is required";
-      }
-      if(!phone){
-        newErrors.phone = "Phone is required";
-      }
-      if(!message){
-        newErrors.message = "Message is required";
-      }
-
-      if(!agreed){
-        newErrors.agreed = "Please accept the terms and conditions";
-      }
-
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (email && !emailRegex.test(email)) {
-        newErrors.email = "Please enter a valid email address";
-      }
-
-      const phoneRegex = /^[0-9]{10,15}$/;
-      if (phone && !phoneRegex.test(phone)) {
-        newErrors.phone = "Please enter a valid phone number";
-      }
-
-      if(Object.keys(newErrors).length > 0){
-        setErrors(newErrors)
-        return;
-      }
-
-      setLoading(true);
-
-      await submitContactForm(formData);
-      toast.success("Form submitted successfully!");
-      setFormData({ name: "", email: "", phone: "", service: "", message: "", });
-      setErrors({});
-      setAgreed(false);
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+  const {
+    formData,
+    errors,
+    loading,
+    aggred,
+    setAggred,
+    handleChange,
+    handleSubmit
+  } = useContactForm({name:"",email:"",phone:"",message:"",service:""}, true);
 
   return (
     <section aria-labelledby="consultation-heading" className="container-main">
@@ -192,18 +121,18 @@ const Consultation = () => {
               <FormField icon={messageIcon} alt="message" placeholder="Write your message here..." name = "message" value = {formData.message} onChange = {handleChange} textarea error={errors.message} />
 
               {/* BOTTOM */}
-              <div className="flex flex-col md:flex-row">
+              <div className="flex flex-row ">
                 {/* CHECKBOX */}
                 <label htmlFor="terms" className="inline-flex items-start gap-1.25 text-sm text-gray font-medium">
                   <div className="relative mt-0.5">
                     <input
                       id="terms"
                       type="checkbox"
-                      checked={agreed}
-                      onChange={(e) => setAgreed(e.target.checked)}
+                      checked={aggred}
+                      onChange={(e) => setAggred(e.target.checked)}
                       className="peer size-4 appearance-none rounded-sm border-[1.5px] border-light checked:bg-secondary checked:border-secondary"/>
 
-                    {agreed && (
+                    {aggred && (
                       <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-0 top-0">
                         <path d="M4.16699 12.0833C4.16699 12.0833 5.41699 12.0833 7.08366 14.9999C7.08366 14.9999 11.716 7.36103 15.8337 5.83325" stroke="#0E100F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
