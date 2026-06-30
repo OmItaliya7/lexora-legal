@@ -8,7 +8,7 @@ const Contact = () => {
       <SEO
         title="Contact Us | Lexora Legal"
         description="Contact our experienced attorneys for legal consultation, case evaluation, business law, family law, civil litigation, and other legal services."
-        keywords="Contact Lexora Legal for professional legal consultation, business law services, family law assistance, and case evaluations."
+        keywords="contact lawyer, legal consultation, business lawyer, family lawyer, law firm contact, Lexora Legal"
         path="/contact"
       />
       <main>

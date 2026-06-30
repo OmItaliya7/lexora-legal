@@ -39,8 +39,7 @@ const ErrorPage = () => {
 
               {/* DESCRIPTION */}
               <p className="max-w-[500px] text-gray text-sm sm:text-base lg:text-lg">
-                Sorry but the page you are looking for does not exist,
-                have been removed, name changed or is temporarily unavailable
+                Sorry, the page you're looking for doesn't exist, has been removed, had its name changed, or is temporarily unavailable.
               </p>
 
             </div>

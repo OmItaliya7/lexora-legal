@@ -147,7 +147,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
       res.status(401);
 
-      throw new Error("Invalid Email or Password");
+      throw new Error("Invalid Email or password");
     }
 
     // Reset login attempts after successful login

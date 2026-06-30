@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const baseUrl = import.meta.env.VITE_SITE_URL;
+const baseUrl = import.meta.env.VITE_SITE_URL || "https://lexora-legall.vercel.app";
 
 const defaultImage = `${baseUrl}/og-image.webp`;
 

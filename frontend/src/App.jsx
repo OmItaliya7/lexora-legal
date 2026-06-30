@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import PageLoader from "./shared/components/PageLoader";
 import { HelmetProvider } from "react-helmet-async";
+import ErrorBoundary from "./shared/components/ErrorBoundary";
 
 const toastOptions = {
   duration: 3000,
@@ -32,14 +33,13 @@ const googleClientId=import.meta.env.VITE_GOOGLE_CLIENT_ID
 const App = () =>{
   return(
       <HelmetProvider>
-        
         <GoogleOAuthProvider clientId={googleClientId}>
-          <Suspense fallback={<PageLoader />}>
-            <RouterProvider router={router} />
-          </Suspense> 
-          
+          <ErrorBoundary>
+            <Suspense fallback={<PageLoader />}>
+              <RouterProvider router={router} />
+            </Suspense> 
+          </ErrorBoundary>
           <Toaster position="top-right" reverseOrder={false} toastOptions={toastOptions} />
-          
         </GoogleOAuthProvider>
       </HelmetProvider>
   )

@@ -4,7 +4,8 @@ import toast from "react-hot-toast";
 import { submitContactForm } from "@/api/contactApi";
 
 export const useContactForm = (initialValues, requireAgreement = false) => {
-    const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+    const defaultValues = { name: "", email: "", phone: "", message: "" };
+    const [formData, setFormData] = useState({ ...defaultValues, ...initialValues });
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({});
     const [aggred, setAggred] = useState(false);
@@ -71,7 +72,7 @@ export const useContactForm = (initialValues, requireAgreement = false) => {
             setLoading(true);
             await submitContactForm(formData);
             toast.success("Form submitted successfully!");
-            setFormData(initialValues);
+            setFormData({...defaultValues, ...initialValues});
             setErrors({});
             setAggred(false);
             return true;
